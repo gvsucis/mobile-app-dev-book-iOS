@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -30,40 +30,44 @@ class ViewController: UIViewController {
       self.view.endEditing(true)
     }
 
-    func validateFields() -> Bool {
-      var pwOk = false
-      if let pw = self.passwordField.text {
-          if pw.lowercased().range(of: "traxy") != nil {
-              pwOk = true
-          }
-      }
-      if !pwOk {
-        print(NSLocalizedString("Invalid password", comment: ""))
-      }
-
-                              
-      var emailOk = false
-      if let email = self.emailField.text {
-        let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", regex)
-        emailOk = emailPredicate.evaluate(with: email)
-      }
-      if !emailOk {
-        print(NSLocalizedString("Invalid email address", comment: ""))
-      }
-      return emailOk && pwOk
+        func validateFields() -> Bool {
+        let pwOk = self.isValidPassword(password: self.passwordField.text)
+        if !pwOk {
+            print(NSLocalizedString("Invalid password",comment: ""))
+        }
+        
+        let emailOk = self.isValidEmail(emailStr: self.emailField.text)
+        if !emailOk {
+            print(NSLocalizedString("Invalid email address", comment: ""))
+        }
+        
+        return emailOk && pwOk
     }
 
     
     @IBAction func signupButtonPressed(_ sender: UIButton) {
         if self.validateFields() {
             print(NSLocalizedString("Congratulations!  You entered correct values.", comment: ""))
+            self.performSegue(withIdentifier: "segueToMain", sender: self)
+        }
+    }
+    
+    @IBAction func logout(segue : UIStoryboardSegue) {
+        print("Logged out")
+        self.passwordField.text = ""
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToMain" {
+            if let destVC = segue.destination.children[0] as? MainViewController {
+                destVC.userEmail = self.emailField.text
+            }
         }
     }
     
 }
 
-extension ViewController : UITextFieldDelegate {
+extension LoginViewController : UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if textField == self.emailField {
       self.passwordField.becomeFirstResponder()

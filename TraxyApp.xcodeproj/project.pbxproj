@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		0CEC9DDD24EC45E700B5944C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC9DDC24EC45E700B5944C /* AppDelegate.swift */; };
 		0CEC9DDF24EC45E700B5944C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC9DDE24EC45E700B5944C /* SceneDelegate.swift */; };
-		0CEC9DE124EC45E700B5944C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC9DE024EC45E700B5944C /* ViewController.swift */; };
+		0CEC9DE124EC45E700B5944C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC9DE024EC45E700B5944C /* LoginViewController.swift */; };
 		0CEC9DE424EC45E700B5944C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CEC9DE224EC45E700B5944C /* Main.storyboard */; };
 		0CEC9DE624EC45E900B5944C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CEC9DE524EC45E900B5944C /* Assets.xcassets */; };
 		0CEC9DE924EC45E900B5944C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CEC9DE724EC45E900B5944C /* LaunchScreen.storyboard */; };
 		0CEC9DF424EC45E900B5944C /* TraxyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC9DF324EC45E900B5944C /* TraxyAppTests.swift */; };
 		0CEC9DFF24EC45E900B5944C /* TraxyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC9DFE24EC45E900B5944C /* TraxyAppUITests.swift */; };
 		0CEC9E1024EC618A00B5944C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CEC9E1224EC618A00B5944C /* Localizable.strings */; };
+		0CEC9E1724EDE0B700B5944C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC9E1624EDE0B700B5944C /* MainViewController.swift */; };
+		0CEC9E1924EDE54E00B5944C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC9E1824EDE54E00B5944C /* SignUpViewController.swift */; };
+		0CEC9E1B24EEC70300B5944C /* UIViewController+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC9E1A24EEC70200B5944C /* UIViewController+Validation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,7 @@
 		0CEC9DD924EC45E700B5944C /* TraxyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraxyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CEC9DDC24EC45E700B5944C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CEC9DDE24EC45E700B5944C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0CEC9DE024EC45E700B5944C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0CEC9DE024EC45E700B5944C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0CEC9DE324EC45E700B5944C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CEC9DE524EC45E900B5944C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CEC9DE824EC45E900B5944C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +57,9 @@
 		0CEC9E0D24EC555100B5944C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		0CEC9E1124EC618A00B5944C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0CEC9E1324EC619400B5944C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0CEC9E1624EDE0B700B5944C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0CEC9E1824EDE54E00B5944C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0CEC9E1A24EEC70200B5944C /* UIViewController+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Validation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +110,14 @@
 		0CEC9DDB24EC45E700B5944C /* TraxyApp */ = {
 			isa = PBXGroup;
 			children = (
+				0CEC9E1624EDE0B700B5944C /* MainViewController.swift */,
+				0CEC9DE024EC45E700B5944C /* LoginViewController.swift */,
+				0CEC9E1824EDE54E00B5944C /* SignUpViewController.swift */,
+				0CEC9E1A24EEC70200B5944C /* UIViewController+Validation.swift */,
+				0CEC9DE224EC45E700B5944C /* Main.storyboard */,
 				0CEC9E1224EC618A00B5944C /* Localizable.strings */,
 				0CEC9DDC24EC45E700B5944C /* AppDelegate.swift */,
 				0CEC9DDE24EC45E700B5944C /* SceneDelegate.swift */,
-				0CEC9DE024EC45E700B5944C /* ViewController.swift */,
-				0CEC9DE224EC45E700B5944C /* Main.storyboard */,
 				0CEC9DE524EC45E900B5944C /* Assets.xcassets */,
 				0CEC9DE724EC45E900B5944C /* LaunchScreen.storyboard */,
 				0CEC9DEA24EC45E900B5944C /* Info.plist */,
@@ -267,9 +276,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CEC9DE124EC45E700B5944C /* ViewController.swift in Sources */,
+				0CEC9DE124EC45E700B5944C /* LoginViewController.swift in Sources */,
 				0CEC9DDD24EC45E700B5944C /* AppDelegate.swift in Sources */,
 				0CEC9DDF24EC45E700B5944C /* SceneDelegate.swift in Sources */,
+				0CEC9E1B24EEC70300B5944C /* UIViewController+Validation.swift in Sources */,
+				0CEC9E1724EDE0B700B5944C /* MainViewController.swift in Sources */,
+				0CEC9E1924EDE54E00B5944C /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
