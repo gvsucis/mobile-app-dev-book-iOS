@@ -9,16 +9,13 @@
 import UIKit
 
 class TraxyBaseViewController: UIViewController {
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-}
-
-class TraxyLoginViewController: TraxyBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = THEME_COLOR2
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 
