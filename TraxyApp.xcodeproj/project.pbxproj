@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		0CEC9E1724EDE0B700B5944C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC9E1624EDE0B700B5944C /* MainViewController.swift */; };
 		0CEC9E1924EDE54E00B5944C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC9E1824EDE54E00B5944C /* SignUpViewController.swift */; };
 		0CEC9E1B24EEC70300B5944C /* UIViewController+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC9E1A24EEC70200B5944C /* UIViewController+Validation.swift */; };
+		231C80B8FA2B2364DD5656EC /* Pods_TraxyAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D131C165BF05FE59DC00F7 /* Pods_TraxyAppTests.framework */; };
 		9E0E54552524ECA400A3E405 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E54542524ECA400A3E405 /* Journal.swift */; };
 		9E0E545A2524ECD400A3E405 /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E54592524ECD400A3E405 /* JournalModel.swift */; };
 		9E0E546D2526429C00A3E405 /* TraxyMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E546C2526429C00A3E405 /* TraxyMainTableViewCell.swift */; };
@@ -26,6 +27,10 @@
 		9E9104D8251F88BF009BDD4D /* TraxyLoginLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104D7251F88BF009BDD4D /* TraxyLoginLabel.swift */; };
 		9E9104DD251F88EC009BDD4D /* TraxyLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104DC251F88EC009BDD4D /* TraxyLoginButton.swift */; };
 		9E9104E2251F8925009BDD4D /* TraxyLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104E1251F8925009BDD4D /* TraxyLoginTextField.swift */; };
+		9EC20E8025267DF300154EC5 /* AddJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC20E7F25267DF300154EC5 /* AddJournalViewController.swift */; };
+		9EC20E85252689B500154EC5 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC20E84252689B500154EC5 /* APIKeys.swift */; };
+		B67B7251164BC2CCDD02DF08 /* Pods_TraxyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EA4D044D8DA5DF936AF916 /* Pods_TraxyApp.framework */; };
+		F7EC29EB572D7A3629220840 /* Pods_TraxyApp_TraxyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3388D722B352630A02E2CCCC /* Pods_TraxyApp_TraxyAppUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02832A9CE7BD2D424007BEF8 /* Pods-TraxyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraxyAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TraxyAppTests/Pods-TraxyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0CEC9DD924EC45E700B5944C /* TraxyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraxyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CEC9DDC24EC45E700B5944C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CEC9DDE24EC45E700B5944C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +73,9 @@
 		0CEC9E1624EDE0B700B5944C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0CEC9E1824EDE54E00B5944C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0CEC9E1A24EEC70200B5944C /* UIViewController+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Validation.swift"; sourceTree = "<group>"; };
+		24208160B3337DFA763B312B /* Pods-TraxyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraxyApp.debug.xcconfig"; path = "Target Support Files/Pods-TraxyApp/Pods-TraxyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		3388D722B352630A02E2CCCC /* Pods_TraxyApp_TraxyAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraxyApp_TraxyAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70D131C165BF05FE59DC00F7 /* Pods_TraxyAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraxyAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E0E54542524ECA400A3E405 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		9E0E54592524ECD400A3E405 /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
 		9E0E546C2526429C00A3E405 /* TraxyMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyMainTableViewCell.swift; sourceTree = "<group>"; };
@@ -74,6 +83,13 @@
 		9E9104D7251F88BF009BDD4D /* TraxyLoginLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginLabel.swift; sourceTree = "<group>"; };
 		9E9104DC251F88EC009BDD4D /* TraxyLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginButton.swift; sourceTree = "<group>"; };
 		9E9104E1251F8925009BDD4D /* TraxyLoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginTextField.swift; sourceTree = "<group>"; };
+		9EC20E7F25267DF300154EC5 /* AddJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalViewController.swift; sourceTree = "<group>"; };
+		9EC20E84252689B500154EC5 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		A1922BE41E95E88709BD80E2 /* Pods-TraxyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraxyApp.release.xcconfig"; path = "Target Support Files/Pods-TraxyApp/Pods-TraxyApp.release.xcconfig"; sourceTree = "<group>"; };
+		A5EA4D044D8DA5DF936AF916 /* Pods_TraxyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraxyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E884EF814E2E924FFE6F26B8 /* Pods-TraxyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraxyAppTests.release.xcconfig"; path = "Target Support Files/Pods-TraxyAppTests/Pods-TraxyAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		F35D3C79448B379AA450F7BD /* Pods-TraxyApp-TraxyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraxyApp-TraxyAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TraxyApp-TraxyAppUITests/Pods-TraxyApp-TraxyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F5B81526E9FB07ED08CFEA5A /* Pods-TraxyApp-TraxyAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraxyApp-TraxyAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TraxyApp-TraxyAppUITests/Pods-TraxyApp-TraxyAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B67B7251164BC2CCDD02DF08 /* Pods_TraxyApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				231C80B8FA2B2364DD5656EC /* Pods_TraxyAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7EC29EB572D7A3629220840 /* Pods_TraxyApp_TraxyAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +127,8 @@
 				0CEC9DF224EC45E900B5944C /* TraxyAppTests */,
 				0CEC9DFD24EC45E900B5944C /* TraxyAppUITests */,
 				0CEC9DDA24EC45E700B5944C /* Products */,
+				6BADF3C291EF3F512CE72964 /* Pods */,
+				450FC966C1A1A96170D1E8FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +151,7 @@
 				9E0E54492524E50F00A3E405 /* controllers */,
 				0CEC9E1224EC618A00B5944C /* Localizable.strings */,
 				0CEC9DDC24EC45E700B5944C /* AppDelegate.swift */,
+				9EC20E84252689B500154EC5 /* APIKeys.swift */,
 				0CEC9DDE24EC45E700B5944C /* SceneDelegate.swift */,
 				0CEC9DEA24EC45E900B5944C /* Info.plist */,
 			);
@@ -154,6 +176,29 @@
 			path = TraxyAppUITests;
 			sourceTree = "<group>";
 		};
+		450FC966C1A1A96170D1E8FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5EA4D044D8DA5DF936AF916 /* Pods_TraxyApp.framework */,
+				3388D722B352630A02E2CCCC /* Pods_TraxyApp_TraxyAppUITests.framework */,
+				70D131C165BF05FE59DC00F7 /* Pods_TraxyAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6BADF3C291EF3F512CE72964 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24208160B3337DFA763B312B /* Pods-TraxyApp.debug.xcconfig */,
+				A1922BE41E95E88709BD80E2 /* Pods-TraxyApp.release.xcconfig */,
+				F35D3C79448B379AA450F7BD /* Pods-TraxyApp-TraxyAppUITests.debug.xcconfig */,
+				F5B81526E9FB07ED08CFEA5A /* Pods-TraxyApp-TraxyAppUITests.release.xcconfig */,
+				02832A9CE7BD2D424007BEF8 /* Pods-TraxyAppTests.debug.xcconfig */,
+				E884EF814E2E924FFE6F26B8 /* Pods-TraxyAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9E0E54492524E50F00A3E405 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +207,7 @@
 				0CEC9E1824EDE54E00B5944C /* SignUpViewController.swift */,
 				0CEC9E1A24EEC70200B5944C /* UIViewController+Validation.swift */,
 				9E9104D2251F84FC009BDD4D /* TraxyBaseViewController.swift */,
+				9EC20E7F25267DF300154EC5 /* AddJournalViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -203,9 +249,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CEC9E0324EC45E900B5944C /* Build configuration list for PBXNativeTarget "TraxyApp" */;
 			buildPhases = (
+				98347E0239D9926A8635A5ED /* [CP] Check Pods Manifest.lock */,
 				0CEC9DD524EC45E700B5944C /* Sources */,
 				0CEC9DD624EC45E700B5944C /* Frameworks */,
 				0CEC9DD724EC45E700B5944C /* Resources */,
+				C23CD500527122B8D62ED47A /* [CP] Embed Pods Frameworks */,
+				88350C8F9902631A39888819 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,6 +269,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CEC9E0624EC45E900B5944C /* Build configuration list for PBXNativeTarget "TraxyAppTests" */;
 			buildPhases = (
+				81A9C39695D50B0E6B08CCCD /* [CP] Check Pods Manifest.lock */,
 				0CEC9DEB24EC45E900B5944C /* Sources */,
 				0CEC9DEC24EC45E900B5944C /* Frameworks */,
 				0CEC9DED24EC45E900B5944C /* Resources */,
@@ -238,9 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CEC9E0924EC45E900B5944C /* Build configuration list for PBXNativeTarget "TraxyAppUITests" */;
 			buildPhases = (
+				1212BD26E7A3B510CAB4A5D7 /* [CP] Check Pods Manifest.lock */,
 				0CEC9DF624EC45E900B5944C /* Sources */,
 				0CEC9DF724EC45E900B5944C /* Frameworks */,
 				0CEC9DF824EC45E900B5944C /* Resources */,
+				D6AB0B7E730B71A2C26495E1 /* [CP] Embed Pods Frameworks */,
+				4752120FF424AEFD61602E3C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,6 +377,143 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1212BD26E7A3B510CAB4A5D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TraxyApp-TraxyAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4752120FF424AEFD61602E3C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TraxyApp-TraxyAppUITests/Pods-TraxyApp-TraxyAppUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TraxyApp-TraxyAppUITests/Pods-TraxyApp-TraxyAppUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TraxyApp-TraxyAppUITests/Pods-TraxyApp-TraxyAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81A9C39695D50B0E6B08CCCD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TraxyAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88350C8F9902631A39888819 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TraxyApp/Pods-TraxyApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TraxyApp/Pods-TraxyApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TraxyApp/Pods-TraxyApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98347E0239D9926A8635A5ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TraxyApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C23CD500527122B8D62ED47A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TraxyApp/Pods-TraxyApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TraxyApp/Pods-TraxyApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TraxyApp/Pods-TraxyApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6AB0B7E730B71A2C26495E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TraxyApp-TraxyAppUITests/Pods-TraxyApp-TraxyAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TraxyApp-TraxyAppUITests/Pods-TraxyApp-TraxyAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TraxyApp-TraxyAppUITests/Pods-TraxyApp-TraxyAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0CEC9DD524EC45E700B5944C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -333,7 +523,9 @@
 				9E9104D8251F88BF009BDD4D /* TraxyLoginLabel.swift in Sources */,
 				0CEC9DDD24EC45E700B5944C /* AppDelegate.swift in Sources */,
 				0CEC9DDF24EC45E700B5944C /* SceneDelegate.swift in Sources */,
+				9EC20E8025267DF300154EC5 /* AddJournalViewController.swift in Sources */,
 				9E9104E2251F8925009BDD4D /* TraxyLoginTextField.swift in Sources */,
+				9EC20E85252689B500154EC5 /* APIKeys.swift in Sources */,
 				9E9104DD251F88EC009BDD4D /* TraxyLoginButton.swift in Sources */,
 				0CEC9E1B24EEC70300B5944C /* UIViewController+Validation.swift in Sources */,
 				9E0E54552524ECA400A3E405 /* Journal.swift in Sources */,
@@ -527,6 +719,7 @@
 		};
 		0CEC9E0424EC45E900B5944C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24208160B3337DFA763B312B /* Pods-TraxyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -544,6 +737,7 @@
 		};
 		0CEC9E0524EC45E900B5944C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1922BE41E95E88709BD80E2 /* Pods-TraxyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -561,6 +755,7 @@
 		};
 		0CEC9E0724EC45E900B5944C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02832A9CE7BD2D424007BEF8 /* Pods-TraxyAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -582,6 +777,7 @@
 		};
 		0CEC9E0824EC45E900B5944C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E884EF814E2E924FFE6F26B8 /* Pods-TraxyAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -603,6 +799,7 @@
 		};
 		0CEC9E0A24EC45E900B5944C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F35D3C79448B379AA450F7BD /* Pods-TraxyApp-TraxyAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -622,6 +819,7 @@
 		};
 		0CEC9E0B24EC45E900B5944C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5B81526E9FB07ED08CFEA5A /* Pods-TraxyApp-TraxyAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

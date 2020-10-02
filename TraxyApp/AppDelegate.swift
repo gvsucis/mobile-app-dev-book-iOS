@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GooglePlaces
 
 let THEME_COLOR1 = UIColor.init(red:0.000, green:0.157, blue:0.216,
                                 alpha:1.00)  // DARK BLUE
@@ -22,15 +23,16 @@ let THEME_COLOR5 = UIColor.init(red:0.251, green:0.286, blue:0.141,
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let navAppearance = UINavigationBar.appearance()
         navAppearance.barTintColor = THEME_COLOR2
         navAppearance.tintColor = THEME_COLOR3
         navAppearance.isTranslucent = false
         navAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-
+        GMSPlacesClient.provideAPIKey(GOOGLE_PLACES_API_KEY)
+        
+        let searchAppearance = UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+        searchAppearance.defaultTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         return true
     }
 

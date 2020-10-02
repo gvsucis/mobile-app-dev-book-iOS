@@ -289,6 +289,11 @@
                                 <segue destination="Ni7-8V-kjF" kind="unwind" unwindAction="logoutWithSegue:" id="qf4-6V-Loc"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ptq-Yf-wRq">
+                            <connections>
+                                <segue destination="miU-Lz-IC9" kind="show" identifier="addJournalSegue" id="6Qy-d1-NyZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="rBX-7d-Gfs" id="BUE-uV-0gy"/>
@@ -298,6 +303,22 @@
                 <exit id="Ni7-8V-kjF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1888.4057971014495" y="114.50892857142857"/>
+        </scene>
+        <!--Add New Journal-->
+        <scene sceneID="ZQL-in-Vxy">
+            <objects>
+                <viewController title="Add New Journal" id="miU-Lz-IC9" customClass="AddJournalViewController" customModule="TraxyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ySt-ze-mu5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fF4-SD-tMn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New Journal" id="57M-9J-tJ8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PyW-EZ-Mxl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2746" y="115"/>
         </scene>
         <!--Traxy Navigation Controller-->
         <scene sceneID="xTV-TX-bE1">

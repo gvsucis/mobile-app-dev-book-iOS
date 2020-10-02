@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: TraxyBaseViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController: TraxyBaseViewController, UITableViewDataSource, UITableViewDelegate, AddJournalDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var userEmail : String?
@@ -123,6 +123,21 @@ class MainViewController: TraxyBaseViewController, UITableViewDataSource, UITabl
             return
         }
         print("Selected\(String(describing: journal.name))")
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addJournalSegue" {
+            if let destVC = segue.destination as? AddJournalViewController {
+                destVC.delegate = self
+            }
+        }
+    }
+
+    // MARK: - AddJournalDelegate
+    func save(journal: Journal) {
+        self.journals?.append(journal)
+        self.sortIntoSections(journals: self.journals!)
     }
     
 }
