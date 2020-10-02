@@ -21,6 +21,6 @@ class TraxyBaseViewController: UIViewController {
 
 class TraxyNavigationController : UINavigationController {
     override open var preferredStatusBarStyle : UIStatusBarStyle {
-        return topViewController?.preferredStatusBarStyle ?? .default
+        return .lightContent
     }
 }
