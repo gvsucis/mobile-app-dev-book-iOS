@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpViewController: TraxyBaseViewController {
     @IBOutlet weak var emailField: UITextField!
@@ -21,31 +22,42 @@ class SignUpViewController: TraxyBaseViewController {
     }
     
     func validateFields() -> Bool {
-        
+
         let pwOk = self.isEmptyOrNil(password: self.passwordField.text)
         if !pwOk {
-            print(NSLocalizedString("Invalid password", comment: ""))
+            self.validationErrors += "Password cannot be blank."
         }
-        
+
         let pwMatch = self.passwordField.text == self.verifyPasswordField.text
         if !pwMatch {
-            print(NSLocalizedString("Passwords do not match.", comment: ""))
+            self.validationErrors += "Passwords do not match."
         }
-        
+
         let emailOk = self.isValidEmail(emailStr: self.emailField.text)
         if !emailOk {
-            print(NSLocalizedString("Invalid email address", comment: ""))
+            self.validationErrors += "Invalid email address."
         }
-        
+
         return emailOk && pwOk && pwMatch
     }
             
     @IBAction func signupButtonPressed(_ sender: UIButton) {
         if self.validateFields() {
-            print(NSLocalizedString("Congratulations!  You entered correct values.", comment: ""))
-            self.performSegue(withIdentifier: "segueToMainFromSignUp", sender: self)
+            Auth.auth().createUser(withEmail: self.emailField.text!, password:
+                                    self.passwordField.text!) { (user, error) in
+                if let  _ = user {
+                    self.performSegue(withIdentifier: "segueToMainFromSignUp", sender: self)
+                } else {
+                    self.reportError(msg: (error?.localizedDescription)!)
+                }
+            }
+        } else {
+            self.passwordField.text = ""
+            self.verifyPasswordField.text = ""
+            self.passwordField.becomeFirstResponder()
+            self.reportError(msg: self.validationErrors)
         }
-    }
+    }  
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -36,4 +36,10 @@ extension UIViewController {
         }
         return emailOk
     }
+    
+    func reportError(msg: String) {
+        let alert = UIAlertController(title: "Failed", message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

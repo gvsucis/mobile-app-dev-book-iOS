@@ -23,6 +23,8 @@
 		9E0E54552524ECA400A3E405 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E54542524ECA400A3E405 /* Journal.swift */; };
 		9E0E545A2524ECD400A3E405 /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E54592524ECD400A3E405 /* JournalModel.swift */; };
 		9E0E546D2526429C00A3E405 /* TraxyMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E546C2526429C00A3E405 /* TraxyMainTableViewCell.swift */; };
+		9E268EE0252F5D5300631095 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E268EDF252F5D5300631095 /* GoogleService-Info.plist */; };
+		9E268F02252F663100631095 /* Date+ISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E268F01252F663100631095 /* Date+ISO8601.swift */; };
 		9E9104D3251F84FC009BDD4D /* TraxyBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104D2251F84FC009BDD4D /* TraxyBaseViewController.swift */; };
 		9E9104D8251F88BF009BDD4D /* TraxyLoginLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104D7251F88BF009BDD4D /* TraxyLoginLabel.swift */; };
 		9E9104DD251F88EC009BDD4D /* TraxyLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104DC251F88EC009BDD4D /* TraxyLoginButton.swift */; };
@@ -79,6 +81,8 @@
 		9E0E54542524ECA400A3E405 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		9E0E54592524ECD400A3E405 /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
 		9E0E546C2526429C00A3E405 /* TraxyMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyMainTableViewCell.swift; sourceTree = "<group>"; };
+		9E268EDF252F5D5300631095 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9E268F01252F663100631095 /* Date+ISO8601.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ISO8601.swift"; sourceTree = "<group>"; };
 		9E9104D2251F84FC009BDD4D /* TraxyBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyBaseViewController.swift; sourceTree = "<group>"; };
 		9E9104D7251F88BF009BDD4D /* TraxyLoginLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginLabel.swift; sourceTree = "<group>"; };
 		9E9104DC251F88EC009BDD4D /* TraxyLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginButton.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 		0CEC9DDB24EC45E700B5944C /* TraxyApp */ = {
 			isa = PBXGroup;
 			children = (
+				9E268EDF252F5D5300631095 /* GoogleService-Info.plist */,
 				9E0E5465252613AD00A3E405 /* utilities */,
 				9E0E545E2524ED3900A3E405 /* model */,
 				9E0E544D2524EC5200A3E405 /* views */,
@@ -238,6 +243,7 @@
 		9E0E5465252613AD00A3E405 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				9E268F01252F663100631095 /* Date+ISO8601.swift */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 			files = (
 				0CEC9DE924EC45E900B5944C /* LaunchScreen.storyboard in Resources */,
 				0CEC9E1024EC618A00B5944C /* Localizable.strings in Resources */,
+				9E268EE0252F5D5300631095 /* GoogleService-Info.plist in Resources */,
 				0CEC9DE624EC45E900B5944C /* Assets.xcassets in Resources */,
 				0CEC9DE424EC45E700B5944C /* Main.storyboard in Resources */,
 			);
@@ -519,6 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E268F02252F663100631095 /* Date+ISO8601.swift in Sources */,
 				0CEC9DE124EC45E700B5944C /* LoginViewController.swift in Sources */,
 				9E9104D8251F88BF009BDD4D /* TraxyLoginLabel.swift in Sources */,
 				0CEC9DDD24EC45E700B5944C /* AppDelegate.swift in Sources */,

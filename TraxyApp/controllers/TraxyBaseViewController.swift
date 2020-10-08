@@ -9,6 +9,9 @@
 import UIKit
 
 class TraxyBaseViewController: UIViewController {
+    
+    var validationErrors = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = THEME_COLOR2

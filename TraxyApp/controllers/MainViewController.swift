@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class MainViewController: TraxyBaseViewController, UITableViewDataSource, UITableViewDelegate, AddJournalDelegate {
+    
+    fileprivate var db: Firestore!
+    fileprivate var ref: DocumentReference?
+    fileprivate var userId: String? = ""
+    fileprivate var listener: ListenerRegistration?
     
     @IBOutlet weak var tableView: UITableView!
     var userEmail : String?
@@ -24,9 +31,54 @@ class MainViewController: TraxyBaseViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let model = JournalModel()
-        self.journals = model.getJournals()
-        self.sortIntoSections(journals: self.journals!)
+        
+        self.db = Firestore.firestore()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user {
+                self.userId = user.uid
+                if self.userId != nil {
+                    self.ref = self.db.collection("user").document(self.userId!)
+                    self.registerForFireBaseUpdates()
+                }
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let l = self.listener {
+            l.remove()
+        }
+    }
+    
+    fileprivate func registerForFireBaseUpdates()
+    {
+        self.listener = self.ref?.collection("journals").addSnapshotListener({ (snapshot, error) in
+            guard let documents = snapshot?.documents else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+
+            self.journals = [Journal]()
+            for j in documents {
+                let key = j.documentID
+                let name : String? = j["name"] as! String?
+                let location : String?  = j["address"] as! String?
+                let startDateStr  = j["startDate"] as! String?
+                let endDateStr = j["endDate"] as! String?
+                let lat = j["lat"] as! Double?
+                let lng = j["lng"] as! Double?
+                let placeId = j["placeId"] as! String?
+                let journal = Journal(key: key, name: name, location: location, startDate: startDateStr?.dateFromISO8601, endDate: endDateStr?.dateFromISO8601, lat: lat, lng: lng, placeId: placeId)
+                self.journals?.append(journal)
+            }
+            self.sortIntoSections(journals: self.journals!)
+        })
     }
     
     func sortIntoSections(journals: [Journal]) {
@@ -136,28 +188,22 @@ class MainViewController: TraxyBaseViewController, UITableViewDataSource, UITabl
 
     // MARK: - AddJournalDelegate
     func save(journal: Journal) {
-        self.journals?.append(journal)
-        self.sortIntoSections(journals: self.journals!)
+        if let r = self.ref {
+            r.collection("journals").addDocument(data: self.toDictionary(vals: journal))
+        }
+    }
+
+    func toDictionary(vals: Journal) -> [String:Any] {
+        return [
+            "name": vals.name! as NSString,
+            "address": vals.location! as NSString,
+            "startDate" : NSString(string: (vals.startDate?.iso8601)!) ,
+            "endDate": NSString(string: (vals.endDate?.iso8601)!),
+            "lat" : NSNumber(value: vals.lat!),
+            "lng" : NSNumber(value: vals.lng!),
+            "placeId" : vals.placeId! as NSString
+        ]
     }
     
 }
 
-extension Date {
-    struct Formatter {
-        static let short: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "MM-dd-yyyy"
-            return formatter
-        }()
-    }
-    
-    var short: String {
-        return Formatter.short.string(from: self)
-    }
-}
-
-extension String {
-    var dateFromShort: Date? {
-        return Date.Formatter.short.date(from: self)
-    }
-}

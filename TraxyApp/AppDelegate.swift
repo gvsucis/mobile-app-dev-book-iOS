@@ -8,6 +8,7 @@
 
 import UIKit
 import GooglePlaces
+import Firebase
 
 let THEME_COLOR1 = UIColor.init(red:0.000, green:0.157, blue:0.216,
                                 alpha:1.00)  // DARK BLUE
@@ -29,10 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navAppearance.tintColor = THEME_COLOR3
         navAppearance.isTranslucent = false
         navAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-        GMSPlacesClient.provideAPIKey(GOOGLE_PLACES_API_KEY)
-        
+
         let searchAppearance = UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
         searchAppearance.defaultTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        GMSPlacesClient.provideAPIKey(GOOGLE_PLACES_API_KEY)
+        FirebaseApp.configure()
+        
         return true
     }
 

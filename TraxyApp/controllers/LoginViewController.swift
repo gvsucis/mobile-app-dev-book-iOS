@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: TraxyBaseViewController {
 
@@ -30,30 +31,47 @@ class LoginViewController: TraxyBaseViewController {
       self.view.endEditing(true)
     }
 
-        func validateFields() -> Bool {
-        let pwOk = self.isValidPassword(password: self.passwordField.text)
+    func validateFields() -> Bool {
+        let pwOk = self.isEmptyOrNil(password: self.passwordField.text)
         if !pwOk {
-            print(NSLocalizedString("Invalid password",comment: ""))
+            self.validationErrors += "Password cannot be blank."
         }
-        
+
         let emailOk = self.isValidEmail(emailStr: self.emailField.text)
         if !emailOk {
-            print(NSLocalizedString("Invalid email address", comment: ""))
+            self.validationErrors += "Invalid email address."
         }
-        
+
         return emailOk && pwOk
     }
 
     
     @IBAction func signupButtonPressed(_ sender: UIButton) {
         if self.validateFields() {
-            print(NSLocalizedString("Congratulations!  You entered correct values.", comment: ""))
-            self.performSegue(withIdentifier: "segueToMain", sender: self)
+            print("Congratulations!  You entered correct values.")
+            Auth.auth().signIn(withEmail: self.emailField.text!, password:
+            self.passwordField.text!) { (user, error) in
+                if let _ = user {
+                    self.performSegue(withIdentifier: "segueToMain", sender: self)
+                } else {
+                    self.reportError(msg: (error?.localizedDescription)!)
+                    self.passwordField.text = ""
+                    self.passwordField.becomeFirstResponder()
+                }
+            }
+        } else {
+            self.reportError(msg: self.validationErrors)
         }
     }
     
     @IBAction func logout(segue : UIStoryboardSegue) {
-        print("Logged out")
+        do {
+            try Auth.auth().signOut()
+            print("Logged out")
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
         self.passwordField.text = ""
     }
     
