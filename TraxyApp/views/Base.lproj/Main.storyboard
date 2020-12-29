@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -265,6 +265,7 @@
                                             <outlet property="name" destination="BOW-4k-dcy" id="etK-da-jAd"/>
                                             <outlet property="subName" destination="2gi-1o-utK" id="lUu-pY-qRa"/>
                                             <outlet property="translucentView" destination="LT2-4f-Bv4" id="Y6w-Oq-Diw"/>
+                                            <segue destination="syL-bH-x1E" kind="show" identifier="showJournalSegue" id="liW-tq-MUS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -304,6 +305,44 @@
             </objects>
             <point key="canvasLocation" x="1888.4057971014495" y="114.50892857142857"/>
         </scene>
+        <!--Journal Table View Controller-->
+        <scene sceneID="d67-f0-Neu">
+            <objects>
+                <tableViewController id="syL-bH-x1E" customClass="JournalTableViewController" customModule="TraxyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lRT-z9-FkY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RVb-Sa-hrq">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RVb-Sa-hrq" id="pd1-uZ-jGf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="syL-bH-x1E" id="zQF-G4-TDU"/>
+                            <outlet property="delegate" destination="syL-bH-x1E" id="3aY-xX-ILG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="aCU-qz-J5e">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QFz-9o-86k">
+                            <connections>
+                                <action selector="addEntryButtonPressed:" destination="syL-bH-x1E" id="Fl5-cw-EVa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="K6m-lG-COB" kind="show" identifier="confirmSegue" id="7Rd-MR-e9n"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dp-MA-25m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2668" y="-571"/>
+        </scene>
         <!--Add New Journal-->
         <scene sceneID="ZQL-in-Vxy">
             <objects>
@@ -338,6 +377,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLM-x5-GMW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="976.81159420289862" y="114.50892857142857"/>
+        </scene>
+        <!--Journal Entry Confirmation View Controller-->
+        <scene sceneID="S3X-eg-wvK">
+            <objects>
+                <viewController id="K6m-lG-COB" customClass="JournalEntryConfirmationViewController" customModule="TraxyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ojQ-di-E5M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hDM-5z-gfw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MMY-Yp-xXg">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Z2W-Vs-6Ri">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="K6m-lG-COB" id="0yN-ng-bkH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Jp3-In-XEe">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="K6m-lG-COB" id="Ywb-BJ-eAP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EHb-TQ-LfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3475" y="-571"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

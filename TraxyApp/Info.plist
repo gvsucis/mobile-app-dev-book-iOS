@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Add video and audio entries to your journal. </string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Add photos/videos to your journal from your camera roll. </string>
+	<key>NSCameraUsageDescription</key>
+	<string>Add photo and video entries to your journal. </string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>

@@ -23,8 +23,14 @@
 		9E0E54552524ECA400A3E405 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E54542524ECA400A3E405 /* Journal.swift */; };
 		9E0E545A2524ECD400A3E405 /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E54592524ECD400A3E405 /* JournalModel.swift */; };
 		9E0E546D2526429C00A3E405 /* TraxyMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E546C2526429C00A3E405 /* TraxyMainTableViewCell.swift */; };
-		9E268EE0252F5D5300631095 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E268EDF252F5D5300631095 /* GoogleService-Info.plist */; };
 		9E268F02252F663100631095 /* Date+ISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E268F01252F663100631095 /* Date+ISO8601.swift */; };
+		9E38DD17259B9F4A001229D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E38DD16259B9F4A001229D8 /* GoogleService-Info.plist */; };
+		9E38DD1C259BA035001229D8 /* JournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38DD1B259BA035001229D8 /* JournalTableViewController.swift */; };
+		9E38DD22259BB0F8001229D8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E38DD20259BB0F8001229D8 /* AVFoundation.framework */; };
+		9E38DD23259BB0F8001229D8 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E38DD21259BB0F8001229D8 /* AVKit.framework */; };
+		9E38DD25259BB103001229D8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E38DD24259BB103001229D8 /* MobileCoreServices.framework */; };
+		9E38DD44259BC0D4001229D8 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38DD43259BC0D4001229D8 /* JournalEntry.swift */; };
+		9E38DD4C259BDA76001229D8 /* JournalEntryConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38DD4B259BDA76001229D8 /* JournalEntryConfirmationViewController.swift */; };
 		9E9104D3251F84FC009BDD4D /* TraxyBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104D2251F84FC009BDD4D /* TraxyBaseViewController.swift */; };
 		9E9104D8251F88BF009BDD4D /* TraxyLoginLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104D7251F88BF009BDD4D /* TraxyLoginLabel.swift */; };
 		9E9104DD251F88EC009BDD4D /* TraxyLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104DC251F88EC009BDD4D /* TraxyLoginButton.swift */; };
@@ -81,8 +87,14 @@
 		9E0E54542524ECA400A3E405 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		9E0E54592524ECD400A3E405 /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
 		9E0E546C2526429C00A3E405 /* TraxyMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyMainTableViewCell.swift; sourceTree = "<group>"; };
-		9E268EDF252F5D5300631095 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9E268F01252F663100631095 /* Date+ISO8601.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ISO8601.swift"; sourceTree = "<group>"; };
+		9E38DD16259B9F4A001229D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9E38DD1B259BA035001229D8 /* JournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
+		9E38DD20259BB0F8001229D8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9E38DD21259BB0F8001229D8 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		9E38DD24259BB103001229D8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9E38DD43259BC0D4001229D8 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		9E38DD4B259BDA76001229D8 /* JournalEntryConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryConfirmationViewController.swift; sourceTree = "<group>"; };
 		9E9104D2251F84FC009BDD4D /* TraxyBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyBaseViewController.swift; sourceTree = "<group>"; };
 		9E9104D7251F88BF009BDD4D /* TraxyLoginLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginLabel.swift; sourceTree = "<group>"; };
 		9E9104DC251F88EC009BDD4D /* TraxyLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginButton.swift; sourceTree = "<group>"; };
@@ -101,7 +113,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E38DD22259BB0F8001229D8 /* AVFoundation.framework in Frameworks */,
+				9E38DD25259BB103001229D8 /* MobileCoreServices.framework in Frameworks */,
 				B67B7251164BC2CCDD02DF08 /* Pods_TraxyApp.framework in Frameworks */,
+				9E38DD23259BB0F8001229D8 /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,13 +164,13 @@
 		0CEC9DDB24EC45E700B5944C /* TraxyApp */ = {
 			isa = PBXGroup;
 			children = (
-				9E268EDF252F5D5300631095 /* GoogleService-Info.plist */,
 				9E0E5465252613AD00A3E405 /* utilities */,
 				9E0E545E2524ED3900A3E405 /* model */,
 				9E0E544D2524EC5200A3E405 /* views */,
 				9E0E54492524E50F00A3E405 /* controllers */,
 				0CEC9E1224EC618A00B5944C /* Localizable.strings */,
 				0CEC9DDC24EC45E700B5944C /* AppDelegate.swift */,
+				9E38DD16259B9F4A001229D8 /* GoogleService-Info.plist */,
 				9EC20E84252689B500154EC5 /* APIKeys.swift */,
 				0CEC9DDE24EC45E700B5944C /* SceneDelegate.swift */,
 				0CEC9DEA24EC45E900B5944C /* Info.plist */,
@@ -184,6 +199,9 @@
 		450FC966C1A1A96170D1E8FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E38DD24259BB103001229D8 /* MobileCoreServices.framework */,
+				9E38DD20259BB0F8001229D8 /* AVFoundation.framework */,
+				9E38DD21259BB0F8001229D8 /* AVKit.framework */,
 				A5EA4D044D8DA5DF936AF916 /* Pods_TraxyApp.framework */,
 				3388D722B352630A02E2CCCC /* Pods_TraxyApp_TraxyAppUITests.framework */,
 				70D131C165BF05FE59DC00F7 /* Pods_TraxyAppTests.framework */,
@@ -213,6 +231,8 @@
 				0CEC9E1A24EEC70200B5944C /* UIViewController+Validation.swift */,
 				9E9104D2251F84FC009BDD4D /* TraxyBaseViewController.swift */,
 				9EC20E7F25267DF300154EC5 /* AddJournalViewController.swift */,
+				9E38DD1B259BA035001229D8 /* JournalTableViewController.swift */,
+				9E38DD4B259BDA76001229D8 /* JournalEntryConfirmationViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -236,6 +256,7 @@
 			children = (
 				9E0E54542524ECA400A3E405 /* Journal.swift */,
 				9E0E54592524ECD400A3E405 /* JournalModel.swift */,
+				9E38DD43259BC0D4001229D8 /* JournalEntry.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -362,7 +383,7 @@
 			files = (
 				0CEC9DE924EC45E900B5944C /* LaunchScreen.storyboard in Resources */,
 				0CEC9E1024EC618A00B5944C /* Localizable.strings in Resources */,
-				9E268EE0252F5D5300631095 /* GoogleService-Info.plist in Resources */,
+				9E38DD17259B9F4A001229D8 /* GoogleService-Info.plist in Resources */,
 				0CEC9DE624EC45E900B5944C /* Assets.xcassets in Resources */,
 				0CEC9DE424EC45E700B5944C /* Main.storyboard in Resources */,
 			);
@@ -532,7 +553,10 @@
 				0CEC9DDD24EC45E700B5944C /* AppDelegate.swift in Sources */,
 				0CEC9DDF24EC45E700B5944C /* SceneDelegate.swift in Sources */,
 				9EC20E8025267DF300154EC5 /* AddJournalViewController.swift in Sources */,
+				9E38DD44259BC0D4001229D8 /* JournalEntry.swift in Sources */,
 				9E9104E2251F8925009BDD4D /* TraxyLoginTextField.swift in Sources */,
+				9E38DD4C259BDA76001229D8 /* JournalEntryConfirmationViewController.swift in Sources */,
+				9E38DD1C259BA035001229D8 /* JournalTableViewController.swift in Sources */,
 				9EC20E85252689B500154EC5 /* APIKeys.swift in Sources */,
 				9E9104DD251F88EC009BDD4D /* TraxyLoginButton.swift in Sources */,
 				0CEC9E1B24EEC70300B5944C /* UIViewController+Validation.swift in Sources */,
@@ -731,6 +755,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6T3ET24GXR;
 				INFOPLIST_FILE = TraxyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -749,6 +774,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6T3ET24GXR;
 				INFOPLIST_FILE = TraxyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
