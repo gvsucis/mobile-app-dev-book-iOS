@@ -12,6 +12,7 @@ target 'TraxyApp' do
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
+  pod 'Kingfisher'
 
   target 'TraxyAppTests' do
     inherit! :search_paths
