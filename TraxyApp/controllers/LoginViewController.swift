@@ -25,8 +25,6 @@ class LoginViewController: TraxyBaseViewController {
         // make this controller the delegate of the text fields.
         self.emailField.delegate = self
         self.passwordField.delegate = self
-        self.emailField.text = "jengelsma@gmail.com"
-        self.passwordField.text = "traxy1"
     }
     
     @objc func dismissKeyboard() {
