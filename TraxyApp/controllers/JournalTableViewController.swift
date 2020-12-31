@@ -14,6 +14,7 @@ import AVFoundation
 import AVKit
 import MobileCoreServices
 import Kingfisher
+import Lightbox
 
 class JournalTableViewController: UITableViewController {
     
@@ -137,26 +138,42 @@ class JournalTableViewController: UITableViewController {
     }
     
     @IBAction func imageButtonPressed(_ sender: UIButton) {
-           let row = Int(sender.tag)
-           let indexPath = IndexPath(row: row, section: 0)
-           let cell = self.tableView.cellForRow(at: indexPath) as! JournalEntryTableViewCell
-           if let tnImg = cell.thumbnailImage {
-               self.capturedImage = tnImg.image
-           }
-           self.entryToEdit = cell.entry
-           if let entry = cell.entry {
-               switch(entry.type!) {
-                   case .photo:
-                   self.performSegue(withIdentifier: "viewPhoto", sender: self)
-                   case.video:
-                   self.showContentOfUrlWithAVPlayer(url: entry.url)
-                   case .audio:
-                   self.showContentOfUrlWithAVPlayer(url: entry.url)
-                   default: break
-               }
-           }
+        let row = Int(sender.tag)
+        let indexPath = IndexPath(row: row, section: 0)
+        let cell = self.tableView.cellForRow(at: indexPath) as! JournalEntryTableViewCell
+        if let tnImg = cell.thumbnailImage {
+            self.capturedImage = tnImg.image
+        }
+        self.entryToEdit = cell.entry
+        if let entry = cell.entry {
+            switch(entry.type!) {
+            case .photo:
+                self.showPhoto(image: self.capturedImage, caption: entry.caption)
+            case.video:
+                self.showContentOfUrlWithAVPlayer(url: entry.url)
+            case .audio:
+                self.showContentOfUrlWithAVPlayer(url: entry.url)
+            default: break
+            }
+        }
     }
 
+    func showPhoto(image: UIImage?, caption: String?)
+    {
+        guard let img = image, let cap = caption else {
+            return
+        }
+        let images = [
+            LightboxImage(
+                image: img,
+                text: cap
+            )
+        ]
+        let photoCtrl = LightboxController(images: images)
+        photoCtrl.dynamicBackground = true
+        present(photoCtrl, animated: true, completion: nil)
+    }
+    
     func showContentOfUrlWithAVPlayer(url : String) {
            if url == "" { return}
            let mediaUrl = URL(string: url)
@@ -235,10 +252,8 @@ class JournalTableViewController: UITableViewController {
         picker.delegate = self
         self.present(picker, animated: true, completion: nil)
     }
-
     
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "confirmSegue" {
             if let destCtrl = segue.destination as? JournalEntryConfirmationViewController {
@@ -247,11 +262,6 @@ class JournalTableViewController: UITableViewController {
                 destCtrl.type = self.captureType
                 destCtrl.entry = self.entryToEdit  // will be nil on new item
                 destCtrl.journal = self.journal
-            }
-        }  else if segue.identifier == "viewPhoto" {
-            if let destCtrl = segue.destination as? PhotoViewController {
-                destCtrl.imageToView = self.capturedImage
-                destCtrl.captionToView = self.entryToEdit?.caption
             }
         }
     }
@@ -532,4 +542,5 @@ extension JournalTableViewController  {
         return cell
     }
 }
+
 
