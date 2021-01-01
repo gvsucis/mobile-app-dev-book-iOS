@@ -600,11 +600,12 @@
                     </navigationItem>
                     <connections>
                         <segue destination="K6m-lG-COB" kind="show" identifier="confirmSegue" id="7Rd-MR-e9n"/>
+                        <segue destination="3Kt-Tk-8vt" kind="show" identifier="recordAudio" id="40c-Xp-ecN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dp-MA-25m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2741" y="-602"/>
+            <point key="canvasLocation" x="2713" y="-609"/>
         </scene>
         <!--Add New Journal-->
         <scene sceneID="ZQL-in-Vxy">
@@ -620,7 +621,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyW-EZ-Mxl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2741" y="157"/>
+            <point key="canvasLocation" x="2712" y="138"/>
         </scene>
         <!--Traxy Navigation Controller-->
         <scene sceneID="xTV-TX-bE1">
@@ -666,7 +667,113 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHb-TQ-LfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3475" y="-571"/>
+            <point key="canvasLocation" x="3477" y="-609"/>
+        </scene>
+        <!--RecordAudio-->
+        <scene sceneID="PDU-yN-pxE">
+            <objects>
+                <viewController id="3Kt-Tk-8vt" customClass="AudioViewController" customModule="TraxyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3tG-h5-mpm"/>
+                        <viewControllerLayoutGuide type="bottom" id="TNS-yT-dC0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0c3-z5-Rbm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjh-f3-Cmg">
+                                <rect key="frame" x="20" y="96" width="87.5" height="87.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cjh-f3-Cmg" secondAttribute="height" multiplier="1:1" id="X3i-qM-Uqi"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="record"/>
+                                <connections>
+                                    <action selector="recordButtonPressed:" destination="3Kt-Tk-8vt" eventType="touchUpInside" id="XiF-f5-mEY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zm-mg-1n2">
+                                <rect key="frame" x="115.5" y="96" width="183" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="L3Q-zc-xqI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2f-4d-1sA">
+                                <rect key="frame" x="306.5" y="96" width="87.5" height="87.5"/>
+                                <state key="normal" title="Button" image="play"/>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="3Kt-Tk-8vt" eventType="touchUpInside" id="9b5-WR-gVj"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Wx-82-tB6">
+                                <rect key="frame" x="0.0" y="191.5" width="414" height="670.5"/>
+                                <connections>
+                                    <segue destination="asb-RB-19c" kind="embed" identifier="setupAudioCaptionForm" id="wIP-uP-Mxx"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VBB-BF-IaX"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Wx-82-tB6" firstAttribute="leading" secondItem="0c3-z5-Rbm" secondAttribute="leading" id="07U-Qz-WN0"/>
+                            <constraint firstItem="9Zm-mg-1n2" firstAttribute="leading" secondItem="cjh-f3-Cmg" secondAttribute="trailing" constant="8" id="1KO-f3-vcU"/>
+                            <constraint firstItem="cjh-f3-Cmg" firstAttribute="width" secondItem="0c3-z5-Rbm" secondAttribute="height" multiplier="65:667" id="AoD-Hm-iKU"/>
+                            <constraint firstItem="9Zm-mg-1n2" firstAttribute="top" secondItem="3tG-h5-mpm" secondAttribute="bottom" constant="8" id="Cxd-8e-qgS"/>
+                            <constraint firstAttribute="trailing" secondItem="9Wx-82-tB6" secondAttribute="trailing" id="IYt-mU-ovY"/>
+                            <constraint firstItem="L2f-4d-1sA" firstAttribute="leading" secondItem="9Zm-mg-1n2" secondAttribute="trailing" constant="8" id="Jy6-4C-Lbd"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="cjh-f3-Cmg" secondAttribute="leading" id="UHl-h2-6YY"/>
+                            <constraint firstItem="L2f-4d-1sA" firstAttribute="width" secondItem="cjh-f3-Cmg" secondAttribute="width" id="Vb1-zr-JJK"/>
+                            <constraint firstItem="cjh-f3-Cmg" firstAttribute="top" secondItem="3tG-h5-mpm" secondAttribute="bottom" constant="8" id="X3u-IN-TQW"/>
+                            <constraint firstItem="9Wx-82-tB6" firstAttribute="top" secondItem="cjh-f3-Cmg" secondAttribute="bottom" constant="8" id="Xku-wt-tD1"/>
+                            <constraint firstItem="L2f-4d-1sA" firstAttribute="top" secondItem="3tG-h5-mpm" secondAttribute="bottom" constant="8" id="k1V-RO-f7Q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L2f-4d-1sA" secondAttribute="trailing" id="tk9-zh-MBB"/>
+                            <constraint firstItem="L2f-4d-1sA" firstAttribute="height" secondItem="cjh-f3-Cmg" secondAttribute="height" id="umh-0f-ch8"/>
+                            <constraint firstItem="TNS-yT-dC0" firstAttribute="top" secondItem="9Wx-82-tB6" secondAttribute="bottom" id="z8R-VY-P7q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="RecordAudio" id="sE8-rE-KI1">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="XJN-pa-bVD">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="3Kt-Tk-8vt" id="zem-DV-NxQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="CIN-SW-Skq">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="3Kt-Tk-8vt" id="9dw-du-Eyf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playButton" destination="L2f-4d-1sA" id="TlS-GA-J56"/>
+                        <outlet property="recordButton" destination="cjh-f3-Cmg" id="uFe-kd-gyn"/>
+                        <outlet property="saveButton" destination="CIN-SW-Skq" id="qMi-Cg-8MP"/>
+                        <outlet property="timeLabel" destination="9Zm-mg-1n2" id="1XT-jr-mVi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zHB-Ww-A1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3477" y="-1313"/>
+        </scene>
+        <!--Journal Entry Confirmation View Controller-->
+        <scene sceneID="6E4-MA-PCu">
+            <objects>
+                <viewController id="asb-RB-19c" customClass="JournalEntryConfirmationViewController" customModule="TraxyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gS4-iK-EZw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jh9-uw-eft"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dl1-hM-kSf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="670"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mXY-iy-8PK"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ot1-oq-lZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4210" y="-1314"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -675,7 +782,9 @@
     <resources>
         <image name="landscape" width="600" height="420"/>
         <image name="logo" width="150" height="150"/>
+        <image name="play" width="62" height="59.5"/>
         <image name="playVideo" width="301" height="300.5"/>
+        <image name="record" width="96" height="91.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

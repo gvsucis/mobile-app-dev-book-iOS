@@ -21,17 +21,17 @@ class JournalTableViewController: UITableViewController {
     var capturedImage : UIImage?
     var captureVideoUrl : URL?
     var captureType : EntryType = .photo
-
+    
     var journal: Journal!
     var userId : String!
     var entries : [JournalEntry] = []
     var entryToEdit : JournalEntry?
-
+    
     fileprivate var db: Firestore!
     fileprivate var ref: DocumentReference?
     fileprivate var storageRef : StorageReference?
     fileprivate var listener: ListenerRegistration?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = UITableView.automaticDimension
@@ -73,10 +73,10 @@ class JournalTableViewController: UITableViewController {
                 let lng = entry["lng"] as! Double?
                 let typeRaw = entry["type"] as! Int?
                 let type = EntryType(rawValue: typeRaw!)
-
+                
                 tmpItems.append(JournalEntry(key: key, type: type, caption: caption, url:
-                    url!, thumbnailUrl: thumbnailUrl!, date: dateStr?.dateFromISO8601, lat: lat,
-                          lng: lng))
+                                                url!, thumbnailUrl: thumbnailUrl!, date: dateStr?.dateFromISO8601, lat: lat,
+                                             lng: lng))
             }
             strongSelf.entries = tmpItems
             strongSelf.entries.sort {$0.date! > $1.date! }
@@ -95,46 +95,46 @@ class JournalTableViewController: UITableViewController {
             l.remove()
         }
     }
-
+    
     @IBAction func addEntryButtonPressed(_ sender: UIBarButtonItem) {
-         let alertController = UIAlertController(title: nil, message:
-            "What kind of entry would you like to add to your journal?",
-            preferredStyle: .actionSheet)
-         
-         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-           // TBD ...
-         }
-         alertController.addAction(cancelAction)
-         
-         let addTextAction = UIAlertAction(title: "Text Entry", style: .default) {
-         (action) in
+        let alertController = UIAlertController(title: nil, message:
+                                                    "What kind of entry would you like to add to your journal?",
+                                                preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            // TBD ...
+        }
+        alertController.addAction(cancelAction)
+        
+        let addTextAction = UIAlertAction(title: "Text Entry", style: .default) {
+            (action) in
             self.captureType = .text
-                self.capturedImage = nil
-                self.performSegue(withIdentifier: "confirmSegue", sender: self)
-         }
-         alertController.addAction(addTextAction)
-         
-         let addCameraAction = UIAlertAction(title: "Photo or Video Entry",
-         style: .default) { (action) in
+            self.capturedImage = nil
+            self.performSegue(withIdentifier: "confirmSegue", sender: self)
+        }
+        alertController.addAction(addTextAction)
+        
+        let addCameraAction = UIAlertAction(title: "Photo or Video Entry",
+                                            style: .default) { (action) in
             self.displayCameraIfPermitted()
-         }
-         alertController.addAction(addCameraAction)
-         
-         let selectCameraRollAction = UIAlertAction(title: "Select from Camera Roll",
-         style: .default) { (action) in
+        }
+        alertController.addAction(addCameraAction)
+        
+        let selectCameraRollAction = UIAlertAction(title: "Select from Camera Roll",
+                                                   style: .default) { (action) in
             self.displayImagePicker(type: .photoLibrary)
-         }
-         alertController.addAction(selectCameraRollAction)
-         
-         let addAudioAction = UIAlertAction(title: "Audio Entry", style: .default) {
-         (action) in
-           // TBD ...
-         }
-         alertController.addAction(addAudioAction)
-         
-         self.present(alertController, animated: true) {
-           // TBD ...
-         }
+        }
+        alertController.addAction(selectCameraRollAction)
+        
+        let addAudioAction = UIAlertAction(title: "Audio Entry", style: .default) {
+            (action) in
+            self.performSegue(withIdentifier: "recordAudio", sender: self)
+        }
+        alertController.addAction(addAudioAction)
+        
+        self.present(alertController, animated: true) {
+            // TBD ...
+        }
     }
     
     @IBAction func imageButtonPressed(_ sender: UIButton) {
@@ -157,7 +157,7 @@ class JournalTableViewController: UITableViewController {
             }
         }
     }
-
+    
     func showPhoto(image: UIImage?, caption: String?)
     {
         guard let img = image, let cap = caption else {
@@ -175,29 +175,29 @@ class JournalTableViewController: UITableViewController {
     }
     
     func showContentOfUrlWithAVPlayer(url : String) {
-           if url == "" { return}
-           let mediaUrl = URL(string: url)
-           let player = AVPlayer(url: mediaUrl!)
-           let playerViewController = AVPlayerViewController()
-           playerViewController.player = player
-           self.present(playerViewController, animated: true) {
-               playerViewController.player!.play()
-           }
+        if url == "" { return}
+        let mediaUrl = URL(string: url)
+        let player = AVPlayer(url: mediaUrl!)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: true) {
+            playerViewController.player!.play()
+        }
     }
-
+    
     @IBAction func editButtonPressed(_ sender: UIButton) {
-           let row = Int(sender.tag)
-           print("Row \(row) edit button pressed.")
-           let indexPath = IndexPath(row: row, section: 0)
-           let cell = self.tableView.cellForRow(at: indexPath) as! JournalEntryTableViewCell
-           if let tnImg = cell.thumbnailImage {
-               self.capturedImage = tnImg.image
-           }
-           self.entryToEdit = cell.entry
-           self.captureType = (self.entryToEdit?.type)!
-           self.performSegue(withIdentifier: "confirmSegue", sender: self)
+        let row = Int(sender.tag)
+        print("Row \(row) edit button pressed.")
+        let indexPath = IndexPath(row: row, section: 0)
+        let cell = self.tableView.cellForRow(at: indexPath) as! JournalEntryTableViewCell
+        if let tnImg = cell.thumbnailImage {
+            self.capturedImage = tnImg.image
+        }
+        self.entryToEdit = cell.entry
+        self.captureType = (self.entryToEdit?.type)!
+        self.performSegue(withIdentifier: "confirmSegue", sender: self)
     }
-
+    
     func displayCameraIfPermitted() {
         let cameraMediaType = AVMediaType.video
         let cameraAuthorizationStatus =
@@ -232,7 +232,7 @@ class JournalTableViewController: UITableViewController {
         
         let settingsAction = UIAlertAction(title: "Settings", style: .default ) { action in
             UIApplication.shared.open(NSURL(string: UIApplication.openSettingsURLString)! as URL,
-                options: [:], completionHandler: nil)
+                                      options: [:], completionHandler: nil)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -263,6 +263,12 @@ class JournalTableViewController: UITableViewController {
                 destCtrl.entry = self.entryToEdit  // will be nil on new item
                 destCtrl.journal = self.journal
             }
+        } else if segue.identifier == "recordAudio" {
+            if let destCtrl = segue.destination as? AudioViewController {
+                destCtrl.entry = self.entryToEdit // will be nil if new item.
+                destCtrl.delegate = self
+                destCtrl.journal = self.journal
+            }
         }
     }
 }
@@ -271,16 +277,16 @@ extension JournalTableViewController : AddJournalEntryDelegate {
     
     func save(entry: JournalEntry) {
         switch(entry.type!) {
-            case .photo:
-                self.savePhoto(entry: entry)
-            case .video:
-                self.saveVideo(entry: entry)
-            case .text:
-                var vals = self.toDictionary(vals: entry)
-                vals["url"]  = ""
-                _ = self.saveEntryToFireStore(key: entry.key, ref: self.ref, vals: vals)
-            case .audio:
-                self.saveAudio(entry: entry)
+        case .photo:
+            self.savePhoto(entry: entry)
+        case .video:
+            self.saveVideo(entry: entry)
+        case .text:
+            var vals = self.toDictionary(vals: entry)
+            vals["url"]  = ""
+            _ = self.saveEntryToFireStore(key: entry.key, ref: self.ref, vals: vals)
+        case .audio:
+            self.saveAudio(entry: entry)
         }
     }
     
@@ -310,26 +316,39 @@ extension JournalTableViewController : AddJournalEntryDelegate {
     }
     
     func saveAudio(entry: JournalEntry) {
-        // TODO: stub method, to be completed in next chapter.
+        
+        let vals = self.toDictionary(vals: entry)
+        let entryRef = self.saveEntryToFireStore(key: entry.key, ref: self.ref, vals: vals)
+        // if we have a nil key, then this is a new entry and we have an audio file to save.
+        if entry.key == nil {
+            self.saveMediaFileToFirebase(entry: entry, saveRefClosure: { (downloadUrl) in
+                // having uploaded the audio data, now store its URL.
+                let vals = [
+                    "url" : downloadUrl as NSString
+                ]
+                entryRef?.setData(vals, merge: true)
+            })
+        }
     }
     
+    
     func savePhoto(entry: JournalEntry) {
-           let vals = self.toDictionary(vals: entry)
-           let entryRef = self.saveEntryToFireStore(key: entry.key, ref: self.ref, vals: vals)
-           if entry.key == nil {
-               self.saveImageToFirebase(imageToSave: self.capturedImage, saveRefClosure: {
-               (downloadUrl) in
-                   // store the image URL
-                   let vals = [
-                       "url" : downloadUrl as NSString
-                   ]
+        let vals = self.toDictionary(vals: entry)
+        let entryRef = self.saveEntryToFireStore(key: entry.key, ref: self.ref, vals: vals)
+        if entry.key == nil {
+            self.saveImageToFirebase(imageToSave: self.capturedImage, saveRefClosure: {
+                (downloadUrl) in
+                // store the image URL
+                let vals = [
+                    "url" : downloadUrl as NSString
+                ]
                 entryRef?.setData(vals, merge: true)
-               })
-           }
-     }
+            })
+        }
+    }
     
     func saveImageToFirebase(imageToSave : UIImage?,
-        saveRefClosure: @escaping (String) -> ())
+                             saveRefClosure: @escaping (String) -> ())
     {
         if let image = imageToSave {
             let imageData = image.jpegData(compressionQuality: 0.8)
@@ -338,23 +357,23 @@ extension JournalTableViewController : AddJournalEntryDelegate {
             metadata.contentType = "image/jpeg"
             if let sr = self.storageRef {
                 sr.child(imagePath)
-                .putData(imageData!, metadata: metadata) { (metadata, error) in
-                    if let error = error {
-                        print("Error uploading: \(error)")
-                        return
-                    }
-                    let imageRef = sr.child(imagePath)
-                    imageRef.downloadURL(completion: { (url, error) in
+                    .putData(imageData!, metadata: metadata) { (metadata, error) in
                         if let error = error {
-                            // Handle any errors
-                            print("Error getting url to uploaded image: \(error)")
-                        } else {
-                            if let str = url?.absoluteString {
-                                saveRefClosure(str)
-                            }
+                            print("Error uploading: \(error)")
+                            return
                         }
-                    })
-                }
+                        let imageRef = sr.child(imagePath)
+                        imageRef.downloadURL(completion: { (url, error) in
+                            if let error = error {
+                                // Handle any errors
+                                print("Error getting url to uploaded image: \(error)")
+                            } else {
+                                if let str = url?.absoluteString {
+                                    saveRefClosure(str)
+                                }
+                            }
+                        })
+                    }
             }
         }
     }
@@ -373,11 +392,11 @@ extension JournalTableViewController : AddJournalEntryDelegate {
                 var newEntry = entry
                 newEntry.url = url.absoluteString
                 self.saveMediaFileToFirebase(entry: newEntry, saveRefClosure: { (downloadUrl)
-                in
+                    in
                     
                     // record the URL of the video
                     let vals = [
-                    "url" : downloadUrl as NSString
+                        "url" : downloadUrl as NSString
                     ]
                     print("Updating URL video: \(downloadUrl)")
                     entryRef?.setData(vals, merge: true)
@@ -387,11 +406,11 @@ extension JournalTableViewController : AddJournalEntryDelegate {
             
             // save video's thumbnail image
             self.saveImageToFirebase(imageToSave: self.capturedImage, saveRefClosure: {
-            (downloadUrl) in
+                (downloadUrl) in
                 
                 // record the URL of the thumbnail
                 let vals = [
-                "thumbnailUrl" : downloadUrl as NSString
+                    "thumbnailUrl" : downloadUrl as NSString
                 ]
                 print("Updating thumbnail URL : \(downloadUrl)")
                 entryRef?.setData(vals, merge: true)
@@ -400,7 +419,7 @@ extension JournalTableViewController : AddJournalEntryDelegate {
     }
     
     func saveMediaFileToFirebase(entry: JournalEntry, saveRefClosure: @escaping (String)
-    -> () ) {
+                                    -> () ) {
         
         let type : String = entry.type! == .audio ? "audio" : "video"
         let ext : String = entry.type! == .audio ? "m4a" : "mp4"
@@ -417,24 +436,24 @@ extension JournalTableViewController : AddJournalEntryDelegate {
                 metadata.contentType = mime
                 if let sr = self.storageRef {
                     sr.child(mediaPath)
-                    .putData(media, metadata: metadata) {(metadata, error) in
-                        if let error = error {
-                            print("Error uploading: \(error)")
-                            return
-                        }
-                        
-                        let videoRef = sr.child(mediaPath)
-                        videoRef.downloadURL(completion: { (url, error) in
+                        .putData(media, metadata: metadata) {(metadata, error) in
                             if let error = error {
-                                // Handle any errors
-                                print("Error getting url to uploaded video: \(error)")
-                            } else {
-                                if let str = url?.absoluteString {
-                                    saveRefClosure(str)
-                                }
+                                print("Error uploading: \(error)")
+                                return
                             }
-                        })
-                    }
+                            
+                            let videoRef = sr.child(mediaPath)
+                            videoRef.downloadURL(completion: { (url, error) in
+                                if let error = error {
+                                    // Handle any errors
+                                    print("Error getting url to uploaded video: \(error)")
+                                } else {
+                                    if let str = url?.absoluteString {
+                                        saveRefClosure(str)
+                                    }
+                                }
+                            })
+                        }
                 }
             }
         } catch {
@@ -445,7 +464,7 @@ extension JournalTableViewController : AddJournalEntryDelegate {
 }
 
 extension JournalTableViewController : UIImagePickerControllerDelegate,
-                        UINavigationControllerDelegate
+                                       UINavigationControllerDelegate
 {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -454,7 +473,7 @@ extension JournalTableViewController : UIImagePickerControllerDelegate,
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
     {
         //let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         self.dismiss(animated: true, completion: nil)
@@ -472,8 +491,8 @@ extension JournalTableViewController : UIImagePickerControllerDelegate,
         }
         self.performSegue(withIdentifier: "confirmSegue", sender: self)
     }
-
-
+    
+    
     func thumbnailForVideoAtURL(url: URL) -> UIImage? {
         let asset = AVURLAsset(url: url)
         let generator = AVAssetImageGenerator(asset: asset)
@@ -500,20 +519,20 @@ extension JournalTableViewController  {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection
-      section: Int) -> Int {
+                                section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return self.entries.count
     }
     
     override func tableView(_ tableView: UITableView,
-      cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let entry = self.entries[indexPath.row]
         let cellIds = ["NA", "TextCell", "PhotoCell", "AudioCell", "PhotoCell"]
         
         let cell = tableView.dequeueReusableCell(withIdentifier:
-          cellIds[entry.type!.rawValue],
-          for: indexPath) as! JournalEntryTableViewCell
+                                                    cellIds[entry.type!.rawValue],
+                                                 for: indexPath) as! JournalEntryTableViewCell
         
         cell.editButton?.tag = indexPath.row
         if let imgButton = cell.imageButton {
@@ -531,11 +550,11 @@ extension JournalTableViewController  {
             cell.thumbnailImage.kf.setImage(with: url)
             cell.playButton.isHidden = true
         case .video:
-                let url = URL(string: entry.thumbnailUrl)
-                cell.thumbnailImage.kf.indicatorType = .activity
-                cell.thumbnailImage.kf.setImage(with: url)
-                cell.playButton.isHidden = false
-                cell.playButton.tag = indexPath.row
+            let url = URL(string: entry.thumbnailUrl)
+            cell.thumbnailImage.kf.indicatorType = .activity
+            cell.thumbnailImage.kf.setImage(with: url)
+            cell.playButton.isHidden = false
+            cell.playButton.tag = indexPath.row
         default: break
         }
         

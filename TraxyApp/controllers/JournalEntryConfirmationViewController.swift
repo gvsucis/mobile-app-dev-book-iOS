@@ -64,6 +64,7 @@ class JournalEntryConfirmationViewController: FormViewController {
         }
         
         var caption : String = ""
+
         var date : Date = self.journal.startDate!
         if let e = self.entry {
             caption = e.caption!

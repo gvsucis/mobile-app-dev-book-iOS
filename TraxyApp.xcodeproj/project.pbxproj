@@ -33,6 +33,7 @@
 		9E38DD4C259BDA76001229D8 /* JournalEntryConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38DD4B259BDA76001229D8 /* JournalEntryConfirmationViewController.swift */; };
 		9E38DD6F259D088C001229D8 /* JournalEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38DD6E259D088C001229D8 /* JournalEntryTableViewCell.swift */; };
 		9E38DD7F259D2DD4001229D8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38DD7E259D2DD4001229D8 /* CardView.swift */; };
+		9E38DDB7259E6D7C001229D8 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38DDB6259E6D7C001229D8 /* AudioViewController.swift */; };
 		9E9104D3251F84FC009BDD4D /* TraxyBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104D2251F84FC009BDD4D /* TraxyBaseViewController.swift */; };
 		9E9104D8251F88BF009BDD4D /* TraxyLoginLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104D7251F88BF009BDD4D /* TraxyLoginLabel.swift */; };
 		9E9104DD251F88EC009BDD4D /* TraxyLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104DC251F88EC009BDD4D /* TraxyLoginButton.swift */; };
@@ -99,6 +100,7 @@
 		9E38DD4B259BDA76001229D8 /* JournalEntryConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryConfirmationViewController.swift; sourceTree = "<group>"; };
 		9E38DD6E259D088C001229D8 /* JournalEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewCell.swift; sourceTree = "<group>"; };
 		9E38DD7E259D2DD4001229D8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		9E38DDB6259E6D7C001229D8 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		9E9104D2251F84FC009BDD4D /* TraxyBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyBaseViewController.swift; sourceTree = "<group>"; };
 		9E9104D7251F88BF009BDD4D /* TraxyLoginLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginLabel.swift; sourceTree = "<group>"; };
 		9E9104DC251F88EC009BDD4D /* TraxyLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginButton.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				9EC20E7F25267DF300154EC5 /* AddJournalViewController.swift */,
 				9E38DD1B259BA035001229D8 /* JournalTableViewController.swift */,
 				9E38DD4B259BDA76001229D8 /* JournalEntryConfirmationViewController.swift */,
+				9E38DDB6259E6D7C001229D8 /* AudioViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				9E0E545A2524ECD400A3E405 /* JournalModel.swift in Sources */,
 				0CEC9E1924EDE54E00B5944C /* SignUpViewController.swift in Sources */,
 				9E0E546D2526429C00A3E405 /* TraxyMainTableViewCell.swift in Sources */,
+				9E38DDB7259E6D7C001229D8 /* AudioViewController.swift in Sources */,
 				9E38DD7F259D2DD4001229D8 /* CardView.swift in Sources */,
 				9E9104D3251F84FC009BDD4D /* TraxyBaseViewController.swift in Sources */,
 			);
