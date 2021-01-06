@@ -71,8 +71,26 @@ class JournalEntryConfirmationViewController: FormViewController {
             date = e.date!
         } else {
             self.entry = JournalEntry(key: nil, type: self.type, caption: caption,
-                                      url: "", thumbnailUrl: "", date: date, lat: 0.0, lng: 0.0)
+                                      url: "", thumbnailUrl: "", date: date, lat: self.journal.lat, lng: self.journal.lng)
+            // if there is a default location for entry, fetch the weather. 
+            if let lat = self.journal.lat, let lng = self.journal.lng {
+                self.navigationItem.rightBarButtonItem?.isEnabled = false
+                self.entry?.lat = lat
+                self.entry?.lng = lng
+                let weatherService = OpenWeatherService.getInstance()
+                weatherService.getWeather(forLocation: (lat, lng)) { (weather) in
+                    if let w = weather {
+                        self.entry?.temperature = w.temperature
+                        self.entry?.weatherIcon = w.iconName
+                    }
+                    DispatchQueue.main.async() {
+                        self.navigationItem.rightBarButtonItem?.isEnabled = true
+                    }
+                }
+            }
         }
+        
+        
         
         form = Section() {
             $0.tag = "FirstSection"

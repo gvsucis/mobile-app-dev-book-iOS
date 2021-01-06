@@ -34,6 +34,8 @@
 		9E38DD6F259D088C001229D8 /* JournalEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38DD6E259D088C001229D8 /* JournalEntryTableViewCell.swift */; };
 		9E38DD7F259D2DD4001229D8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38DD7E259D2DD4001229D8 /* CardView.swift */; };
 		9E38DDB7259E6D7C001229D8 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38DDB6259E6D7C001229D8 /* AudioViewController.swift */; };
+		9E708EC525A3C033004B381A /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E708EC425A3C033004B381A /* WeatherService.swift */; };
+		9E708ECD25A3C0C2004B381A /* OpenWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E708ECC25A3C0C2004B381A /* OpenWeatherService.swift */; };
 		9E9104D3251F84FC009BDD4D /* TraxyBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104D2251F84FC009BDD4D /* TraxyBaseViewController.swift */; };
 		9E9104D8251F88BF009BDD4D /* TraxyLoginLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104D7251F88BF009BDD4D /* TraxyLoginLabel.swift */; };
 		9E9104DD251F88EC009BDD4D /* TraxyLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104DC251F88EC009BDD4D /* TraxyLoginButton.swift */; };
@@ -101,6 +103,8 @@
 		9E38DD6E259D088C001229D8 /* JournalEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewCell.swift; sourceTree = "<group>"; };
 		9E38DD7E259D2DD4001229D8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9E38DDB6259E6D7C001229D8 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		9E708EC425A3C033004B381A /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		9E708ECC25A3C0C2004B381A /* OpenWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherService.swift; sourceTree = "<group>"; };
 		9E9104D2251F84FC009BDD4D /* TraxyBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyBaseViewController.swift; sourceTree = "<group>"; };
 		9E9104D7251F88BF009BDD4D /* TraxyLoginLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginLabel.swift; sourceTree = "<group>"; };
 		9E9104DC251F88EC009BDD4D /* TraxyLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginButton.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 		0CEC9DDB24EC45E700B5944C /* TraxyApp */ = {
 			isa = PBXGroup;
 			children = (
+				9E708EC325A3C016004B381A /* Services */,
 				9E0E5465252613AD00A3E405 /* utilities */,
 				9E0E545E2524ED3900A3E405 /* model */,
 				9E0E544D2524EC5200A3E405 /* views */,
@@ -276,6 +281,15 @@
 				9E268F01252F663100631095 /* Date+ISO8601.swift */,
 			);
 			path = utilities;
+			sourceTree = "<group>";
+		};
+		9E708EC325A3C016004B381A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9E708EC425A3C033004B381A /* WeatherService.swift */,
+				9E708ECC25A3C0C2004B381A /* OpenWeatherService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -561,6 +575,7 @@
 				9E9104D8251F88BF009BDD4D /* TraxyLoginLabel.swift in Sources */,
 				0CEC9DDD24EC45E700B5944C /* AppDelegate.swift in Sources */,
 				0CEC9DDF24EC45E700B5944C /* SceneDelegate.swift in Sources */,
+				9E708EC525A3C033004B381A /* WeatherService.swift in Sources */,
 				9EC20E8025267DF300154EC5 /* AddJournalViewController.swift in Sources */,
 				9E38DD44259BC0D4001229D8 /* JournalEntry.swift in Sources */,
 				9E9104E2251F8925009BDD4D /* TraxyLoginTextField.swift in Sources */,
@@ -569,6 +584,7 @@
 				9E38DD6F259D088C001229D8 /* JournalEntryTableViewCell.swift in Sources */,
 				9EC20E85252689B500154EC5 /* APIKeys.swift in Sources */,
 				9E9104DD251F88EC009BDD4D /* TraxyLoginButton.swift in Sources */,
+				9E708ECD25A3C0C2004B381A /* OpenWeatherService.swift in Sources */,
 				0CEC9E1B24EEC70300B5944C /* UIViewController+Validation.swift in Sources */,
 				9E0E54552524ECA400A3E405 /* Journal.swift in Sources */,
 				0CEC9E1724EDE0B700B5944C /* MainViewController.swift in Sources */,

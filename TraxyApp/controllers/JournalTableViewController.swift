@@ -47,6 +47,7 @@ class JournalTableViewController: UITableViewController {
         self.registerForFireBaseUpdates()
         self.configureStorage()
     }
+
     
     func registerForFireBaseUpdates()
     {
@@ -74,9 +75,12 @@ class JournalTableViewController: UITableViewController {
                 let typeRaw = entry["type"] as! Int?
                 let type = EntryType(rawValue: typeRaw!)
                 
+                let weatherIcon : String? = entry["weatherIcon"] as? String
+                let temperature : Double? = entry["temperature"] as? Double
+                
                 tmpItems.append(JournalEntry(key: key, type: type, caption: caption, url:
                                                 url!, thumbnailUrl: thumbnailUrl!, date: dateStr?.dateFromISO8601, lat: lat,
-                                             lng: lng))
+                                             lng: lng, temperature: temperature, weatherIcon: weatherIcon))
             }
             strongSelf.entries = tmpItems
             strongSelf.entries.sort {$0.date! > $1.date! }
@@ -304,7 +308,7 @@ extension JournalTableViewController : AddJournalEntryDelegate {
     }
     
     func toDictionary(vals: JournalEntry) -> [String:Any] {
-        return [
+        var retval =  [
             "caption": vals.caption! as NSString,
             "lat": vals.lat! as NSNumber,
             "lng": vals.lng! as NSNumber,
@@ -313,6 +317,11 @@ extension JournalTableViewController : AddJournalEntryDelegate {
             "url" : vals.url as NSString,
             "thumbnailUrl" : vals.thumbnailUrl as NSString
         ]
+        if let icon = vals.weatherIcon, let temp = vals.temperature {
+            retval["weatherIcon"] = icon as NSString
+            retval["temperature"] = temp as NSNumber
+        }
+        return retval
     }
     
     func saveAudio(entry: JournalEntry) {

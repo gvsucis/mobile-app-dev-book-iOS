@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class JournalEntryTableViewCell: UITableViewCell {
     
@@ -16,6 +17,8 @@ class JournalEntryTableViewCell: UITableViewCell {
     @IBOutlet weak var textData : UILabel!
     @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var thumbnailImage: UIImageView!
+    @IBOutlet weak var temperature: UILabel!
+    @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var editButton: UIButton!
     var entry : JournalEntry?
     
@@ -44,6 +47,17 @@ class JournalEntryTableViewCell: UITableViewCell {
         self.entry = entry
         self.textData.text = entry.caption
         self.date.text = entry.date?.shortWithTime
+        if let temp = entry.temperature, let w = entry.weatherIcon {
+            let tstr = String(format: "%.0f°", temp)
+            self.temperature.text = tstr
+            let iconUrl = "https://openweathermap.org/img/wn/\(w)@2x.png"
+            self.weatherImage.kf.setImage(with: URL(string: iconUrl))
+            self.temperature.isHidden = false
+            self.weatherImage.isHidden = false
+        } else {
+            self.temperature.isHidden = true
+            self.weatherImage.isHidden = true
+        }
     }
     
 }

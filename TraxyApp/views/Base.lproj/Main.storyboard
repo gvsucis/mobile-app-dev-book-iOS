@@ -331,7 +331,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBV-P5-la4">
-                                                    <rect key="frame" x="8" y="201" width="298" height="18"/>
+                                                    <rect key="frame" x="8" y="201" width="40" height="18"/>
                                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.36862745099999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -374,14 +374,31 @@
                                                         <action selector="imageButtonPressed:" destination="syL-bH-x1E" eventType="touchUpInside" id="JLJ-5r-y7s"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-vp-B9y">
+                                                    <rect key="frame" x="56" y="201" width="28" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uyO-sc-npI">
+                                                    <rect key="frame" x="92" y="193" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="YSy-hM-Ofz"/>
+                                                        <constraint firstAttribute="height" constant="30" id="mJ4-Cv-lVG"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="HBV-P5-la4" firstAttribute="leading" secondItem="b55-tb-6U6" secondAttribute="leading" constant="8" id="4IX-q5-EvD"/>
                                                 <constraint firstAttribute="bottom" secondItem="6eU-LZ-v8l" secondAttribute="bottom" constant="2" id="6BL-R1-Abd"/>
                                                 <constraint firstItem="zeO-dH-fIm" firstAttribute="top" secondItem="k0T-pt-pzd" secondAttribute="bottom" constant="-99" id="Bim-hF-i7q"/>
+                                                <constraint firstItem="6eU-LZ-v8l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uyO-sc-npI" secondAttribute="trailing" constant="8" id="Mj9-u3-7bS"/>
                                                 <constraint firstAttribute="trailing" secondItem="Rup-0C-Rl2" secondAttribute="trailing" constant="8" id="OHA-93-ypg"/>
                                                 <constraint firstAttribute="bottom" secondItem="Rup-0C-Rl2" secondAttribute="bottom" constant="37" id="UO1-Gq-wQA"/>
+                                                <constraint firstItem="ga6-vp-B9y" firstAttribute="leading" secondItem="HBV-P5-la4" secondAttribute="trailing" constant="8" id="XNO-BC-ZXR"/>
+                                                <constraint firstItem="uyO-sc-npI" firstAttribute="leading" secondItem="ga6-vp-B9y" secondAttribute="trailing" constant="8" id="bYK-bj-M70"/>
+                                                <constraint firstAttribute="bottom" secondItem="ga6-vp-B9y" secondAttribute="bottom" constant="8" id="crL-nT-5mi"/>
                                                 <constraint firstItem="k0T-pt-pzd" firstAttribute="leading" secondItem="b55-tb-6U6" secondAttribute="leading" id="g0g-RP-p4H"/>
                                                 <constraint firstAttribute="trailing" secondItem="HLu-4s-eNJ" secondAttribute="trailing" id="gQl-e3-igd"/>
                                                 <constraint firstItem="zeO-dH-fIm" firstAttribute="centerX" secondItem="b55-tb-6U6" secondAttribute="centerX" id="jVC-Ry-Nkl"/>
@@ -390,10 +407,10 @@
                                                 <constraint firstItem="Rup-0C-Rl2" firstAttribute="leading" secondItem="b55-tb-6U6" secondAttribute="leading" constant="8" id="q4f-9j-Xcu"/>
                                                 <constraint firstItem="k0T-pt-pzd" firstAttribute="top" secondItem="b55-tb-6U6" secondAttribute="top" id="r9B-1b-va8"/>
                                                 <constraint firstItem="HLu-4s-eNJ" firstAttribute="top" secondItem="b55-tb-6U6" secondAttribute="top" id="tGW-Hs-G4c"/>
+                                                <constraint firstAttribute="bottom" secondItem="uyO-sc-npI" secondAttribute="bottom" constant="4" id="tXy-vD-hSQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="HBV-P5-la4" secondAttribute="bottom" constant="8" id="u8U-Ac-UbD"/>
                                                 <constraint firstAttribute="trailing" secondItem="k0T-pt-pzd" secondAttribute="trailing" id="uYx-uJ-8G7"/>
                                                 <constraint firstAttribute="trailing" secondItem="6eU-LZ-v8l" secondAttribute="trailing" constant="8" id="xPn-ta-8Eh"/>
-                                                <constraint firstItem="6eU-LZ-v8l" firstAttribute="leading" secondItem="HBV-P5-la4" secondAttribute="trailing" constant="8" id="yn4-Rk-6ea"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -421,8 +438,10 @@
                                     <outlet property="editButton" destination="6eU-LZ-v8l" id="IRC-ZN-eJP"/>
                                     <outlet property="imageButton" destination="k0T-pt-pzd" id="ttL-KE-RB3"/>
                                     <outlet property="playButton" destination="zeO-dH-fIm" id="obJ-UM-5r5"/>
+                                    <outlet property="temperature" destination="ga6-vp-B9y" id="XYb-bB-d2j"/>
                                     <outlet property="textData" destination="Rup-0C-Rl2" id="XUQ-o3-lIJ"/>
                                     <outlet property="thumbnailImage" destination="HLu-4s-eNJ" id="7Oo-hZ-ZeT"/>
+                                    <outlet property="weatherImage" destination="uyO-sc-npI" id="16f-8O-Lvi"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AudioCell" rowHeight="200" id="OhS-zn-0rc" customClass="JournalEntryTableViewCell" customModule="TraxyApp" customModuleProvider="target">
@@ -443,7 +462,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irb-PS-tJC">
-                                                    <rect key="frame" x="8" y="152" width="304" height="18"/>
+                                                    <rect key="frame" x="8" y="152" width="40" height="18"/>
                                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.36862745099999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -469,18 +488,35 @@
                                                         <action selector="imageButtonPressed:" destination="syL-bH-x1E" eventType="touchUpInside" id="t3m-6O-Jzo"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdC-cd-sur">
+                                                    <rect key="frame" x="56" y="152" width="28" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X0z-Va-EiA">
+                                                    <rect key="frame" x="92" y="144" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Gf0-R4-nom"/>
+                                                        <constraint firstAttribute="width" constant="30" id="PGG-a7-KKd"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="Irb-PS-tJC" firstAttribute="top" secondItem="SOa-Iy-HxA" secondAttribute="bottom" constant="8" id="0Rs-e0-eNJ"/>
                                                 <constraint firstItem="7zP-m8-1jZ" firstAttribute="top" secondItem="W3d-wK-q3y" secondAttribute="top" constant="8" id="45l-CR-7NZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="hdC-cd-sur" secondAttribute="bottom" constant="8" id="5Qe-9d-O5Q"/>
+                                                <constraint firstItem="hdC-cd-sur" firstAttribute="leading" secondItem="Irb-PS-tJC" secondAttribute="trailing" constant="8" symbolic="YES" id="5pq-Vb-AOP"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ps6-jn-frk" secondAttribute="bottom" constant="2" id="7bs-bF-ese"/>
                                                 <constraint firstAttribute="trailing" secondItem="SOa-Iy-HxA" secondAttribute="trailing" constant="8" id="81m-Ge-uUt"/>
+                                                <constraint firstAttribute="bottom" secondItem="X0z-Va-EiA" secondAttribute="bottom" constant="4" id="AL7-g2-VHq"/>
                                                 <constraint firstItem="7zP-m8-1jZ" firstAttribute="centerX" secondItem="W3d-wK-q3y" secondAttribute="centerX" id="L0U-Bq-kio"/>
                                                 <constraint firstAttribute="bottom" secondItem="Irb-PS-tJC" secondAttribute="bottom" constant="8" id="NWI-dF-yHA"/>
+                                                <constraint firstItem="X0z-Va-EiA" firstAttribute="leading" secondItem="hdC-cd-sur" secondAttribute="trailing" constant="8" id="ViL-VY-k5G"/>
                                                 <constraint firstItem="SOa-Iy-HxA" firstAttribute="leading" secondItem="W3d-wK-q3y" secondAttribute="leading" constant="8" id="c3q-Fg-jbs"/>
                                                 <constraint firstItem="Irb-PS-tJC" firstAttribute="leading" secondItem="W3d-wK-q3y" secondAttribute="leading" constant="8" id="f9E-ZQ-KQf"/>
-                                                <constraint firstItem="Ps6-jn-frk" firstAttribute="leading" secondItem="Irb-PS-tJC" secondAttribute="trailing" constant="8" id="p3v-wR-2lm"/>
+                                                <constraint firstItem="Ps6-jn-frk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X0z-Va-EiA" secondAttribute="trailing" constant="8" id="lww-Jp-nzK"/>
                                                 <constraint firstItem="SOa-Iy-HxA" firstAttribute="top" secondItem="7zP-m8-1jZ" secondAttribute="bottom" constant="8" id="scG-aW-cBC"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ps6-jn-frk" secondAttribute="trailing" constant="8" id="vtf-8J-EhP"/>
                                             </constraints>
@@ -509,7 +545,9 @@
                                     <outlet property="date" destination="Irb-PS-tJC" id="Trh-pJ-ydA"/>
                                     <outlet property="editButton" destination="Ps6-jn-frk" id="00u-2c-3Le"/>
                                     <outlet property="imageButton" destination="7zP-m8-1jZ" id="v6w-PV-nRc"/>
+                                    <outlet property="temperature" destination="hdC-cd-sur" id="AXh-bj-7mg"/>
                                     <outlet property="textData" destination="SOa-Iy-HxA" id="bFm-y2-aZM"/>
+                                    <outlet property="weatherImage" destination="X0z-Va-EiA" id="9iV-CF-u7Q"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" rowHeight="150" id="qbk-Cb-wS6" customClass="JournalEntryTableViewCell" customModule="TraxyApp" customModuleProvider="target">
@@ -530,7 +568,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBr-va-ds8">
-                                                    <rect key="frame" x="8" y="102" width="304" height="18"/>
+                                                    <rect key="frame" x="8" y="102" width="40" height="18"/>
                                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.36862745099999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -545,18 +583,35 @@
                                                         <action selector="editButtonPressed:" destination="syL-bH-x1E" eventType="touchUpInside" id="2j5-fX-gop"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrj-ea-RI5">
+                                                    <rect key="frame" x="56" y="102" width="28" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kix-bA-EtE">
+                                                    <rect key="frame" x="92" y="94" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="9cC-NH-aCm"/>
+                                                        <constraint firstAttribute="width" constant="30" id="CTz-oe-48P"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="mrj-ea-RI5" secondAttribute="bottom" constant="8" id="AeT-iB-Juk"/>
                                                 <constraint firstItem="eBr-va-ds8" firstAttribute="leading" secondItem="Lvl-wF-TYA" secondAttribute="leading" constant="8" id="CjC-Qg-4PQ"/>
+                                                <constraint firstItem="Kix-bA-EtE" firstAttribute="leading" secondItem="mrj-ea-RI5" secondAttribute="trailing" constant="8" id="D3z-1z-0A7"/>
                                                 <constraint firstAttribute="trailing" secondItem="rhv-n4-Uvi" secondAttribute="trailing" constant="8" id="EaX-LZ-1X2"/>
+                                                <constraint firstAttribute="bottom" secondItem="Kix-bA-EtE" secondAttribute="bottom" constant="4" id="Ivg-bB-CNw"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hcr-RP-Sjj" secondAttribute="trailing" constant="8" id="N9B-mj-X7I"/>
                                                 <constraint firstAttribute="bottom" secondItem="Hcr-RP-Sjj" secondAttribute="bottom" constant="2" id="QWw-Hk-c1z"/>
                                                 <constraint firstAttribute="bottom" secondItem="rhv-n4-Uvi" secondAttribute="bottom" constant="37" id="QhM-zP-3Ca"/>
-                                                <constraint firstItem="Hcr-RP-Sjj" firstAttribute="leading" secondItem="eBr-va-ds8" secondAttribute="trailing" constant="8" id="cyq-3o-VvX"/>
                                                 <constraint firstItem="rhv-n4-Uvi" firstAttribute="leading" secondItem="Lvl-wF-TYA" secondAttribute="leading" constant="8" id="k5P-tG-6dG"/>
                                                 <constraint firstItem="rhv-n4-Uvi" firstAttribute="top" secondItem="Lvl-wF-TYA" secondAttribute="top" constant="8" id="t7J-Gl-lTv"/>
+                                                <constraint firstItem="mrj-ea-RI5" firstAttribute="leading" secondItem="eBr-va-ds8" secondAttribute="trailing" constant="8" id="ugV-wy-mek"/>
                                                 <constraint firstAttribute="bottom" secondItem="eBr-va-ds8" secondAttribute="bottom" constant="8" id="vIs-4s-B4I"/>
+                                                <constraint firstItem="Hcr-RP-Sjj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kix-bA-EtE" secondAttribute="trailing" constant="8" id="vXD-Ar-osU"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -582,7 +637,9 @@
                                     <outlet property="containingView" destination="Lvl-wF-TYA" id="38J-9u-akC"/>
                                     <outlet property="date" destination="eBr-va-ds8" id="ty1-qj-OI6"/>
                                     <outlet property="editButton" destination="Hcr-RP-Sjj" id="UVc-kh-hYx"/>
+                                    <outlet property="temperature" destination="mrj-ea-RI5" id="hMy-lu-yuh"/>
                                     <outlet property="textData" destination="rhv-n4-Uvi" id="eYl-mf-Ppw"/>
+                                    <outlet property="weatherImage" destination="Kix-bA-EtE" id="r0y-MC-u1q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -765,7 +822,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Jh9-uw-eft"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dl1-hM-kSf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="670"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="670.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="mXY-iy-8PK"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -777,7 +834,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Jbn-2F-8X5"/>
+        <segue reference="gsb-ZZ-CU0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="landscape" width="600" height="420"/>

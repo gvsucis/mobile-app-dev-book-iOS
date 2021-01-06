@@ -24,9 +24,11 @@ struct JournalEntry {
     var date : Date?
     var lat : Double?
     var lng : Double?
+    var temperature: Double?
+    var weatherIcon: String? 
     
     init(key: String?, type: EntryType?, caption: String?, url: String,
-      thumbnailUrl: String, date: Date?, lat: Double?, lng: Double?)
+         thumbnailUrl: String, date: Date?, lat: Double?, lng: Double?, temperature: Double? = nil, weatherIcon: String? = nil)
     {
         self.key = key
         self.type = type
@@ -37,6 +39,8 @@ struct JournalEntry {
         self.lng = lng
         self.url = url
         self.thumbnailUrl = thumbnailUrl
+        self.temperature = temperature
+        self.weatherIcon = weatherIcon
     }
 }
 
