@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eYS-2t-Wvh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -87,12 +87,11 @@
                     <connections>
                         <outlet property="emailField" destination="DTV-iZ-y9J" id="Fr8-p7-vpz"/>
                         <outlet property="passwordField" destination="580-ZR-RHB" id="1g6-qT-dds"/>
-                        <segue destination="vZh-z0-aKW" kind="presentation" identifier="segueToMain" modalPresentationStyle="fullScreen" id="gsb-ZZ-CU0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.23188405797103" y="113.16964285714285"/>
+            <point key="canvasLocation" x="809" y="-609"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="dRt-Vf-F90">
@@ -171,12 +170,13 @@
                         <outlet property="emailField" destination="PSr-GF-Rkv" id="Hw1-uA-Ay3"/>
                         <outlet property="passwordField" destination="A6i-Yb-jCb" id="EHF-q6-aBb"/>
                         <outlet property="verifyPasswordField" destination="dCv-Cz-nK0" id="Gf4-en-CHw"/>
-                        <segue destination="vZh-z0-aKW" kind="presentation" identifier="segueToMainFromSignUp" modalPresentationStyle="fullScreen" id="Jbn-2F-8X5"/>
+                        <segue destination="KKE-LX-vPU" kind="unwind" identifier="segueToMainFromSignUp" unwindAction="unwindFromSignupWithSegue:" id="cVo-hx-23w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTL-ST-ndO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="KKE-LX-vPU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="829.6875"/>
+            <point key="canvasLocation" x="1572" y="-609"/>
         </scene>
         <!--Traxy-->
         <scene sceneID="6jg-jg-nok">
@@ -187,7 +187,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rBX-7d-Gfs">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="kuO-Yw-ud8" detailTextLabel="hVk-1A-JyZ" style="IBUITableViewCellStyleSubtitle" id="PG2-HT-3ex">
@@ -287,7 +287,7 @@
                     <navigationItem key="navigationItem" title="Traxy" id="LAc-Ek-eIS">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="BEY-Lr-tAv">
                             <connections>
-                                <segue destination="Ni7-8V-kjF" kind="unwind" unwindAction="logoutWithSegue:" id="qf4-6V-Loc"/>
+                                <action selector="logout" destination="cQg-bl-yGh" id="JUG-At-aUS"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ptq-Yf-wRq">
@@ -301,9 +301,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIv-SS-mRk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="Ni7-8V-kjF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1949" y="157"/>
+            <point key="canvasLocation" x="1571" y="157"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="M1X-AG-mjQ">
+            <objects>
+                <viewController id="YaI-rr-Hes" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7CS-0g-Aix">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="drw-d1-Ef0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LLY-OP-Ck3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D5g-ty-cfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1571" y="884"/>
         </scene>
         <!--Journal Table View Controller-->
         <scene sceneID="d67-f0-Neu">
@@ -662,7 +677,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dp-MA-25m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2713" y="-609"/>
+            <point key="canvasLocation" x="2328" y="-609"/>
         </scene>
         <!--Add New Journal-->
         <scene sceneID="ZQL-in-Vxy">
@@ -678,12 +693,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyW-EZ-Mxl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2712" y="138"/>
+            <point key="canvasLocation" x="2328" y="157"/>
         </scene>
-        <!--Traxy Navigation Controller-->
+        <!--Trips-->
         <scene sceneID="xTV-TX-bE1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vZh-z0-aKW" customClass="TraxyNavigationController" customModule="TraxyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Trips" image="journalTab" id="f0I-x1-6OC"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="xa8-r6-6BU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="atL-eV-DzS">
@@ -697,7 +713,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLM-x5-GMW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976.81159420289862" y="114.50892857142857"/>
+            <point key="canvasLocation" x="809" y="157"/>
         </scene>
         <!--Journal Entry Confirmation View Controller-->
         <scene sceneID="S3X-eg-wvK">
@@ -724,7 +740,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHb-TQ-LfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3477" y="-609"/>
+            <point key="canvasLocation" x="3100" y="-609"/>
         </scene>
         <!--RecordAudio-->
         <scene sceneID="PDU-yN-pxE">
@@ -765,7 +781,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Wx-82-tB6">
-                                <rect key="frame" x="0.0" y="191.5" width="414" height="670.5"/>
+                                <rect key="frame" x="0.0" y="191.5" width="414" height="621.5"/>
                                 <connections>
                                     <segue destination="asb-RB-19c" kind="embed" identifier="setupAudioCaptionForm" id="wIP-uP-Mxx"/>
                                 </connections>
@@ -811,7 +827,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHB-Ww-A1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3477" y="-1313"/>
+            <point key="canvasLocation" x="3100" y="-1315"/>
         </scene>
         <!--Journal Entry Confirmation View Controller-->
         <scene sceneID="6E4-MA-PCu">
@@ -822,7 +838,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Jh9-uw-eft"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dl1-hM-kSf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="670.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="621.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="mXY-iy-8PK"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -830,13 +846,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ot1-oq-lZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4210" y="-1314"/>
+            <point key="canvasLocation" x="3887" y="-1315"/>
+        </scene>
+        <!--Traxy Tab Bar Controller-->
+        <scene sceneID="sl8-EE-CaB">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="eYS-2t-Wvh" customClass="TraxyTabBarController" customModule="TraxyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Y1-fQ-LWx">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vZh-z0-aKW" kind="relationship" relationship="viewControllers" id="qdn-RO-v49"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="presentLogin" modalPresentationStyle="fullScreen" id="rsq-X6-dVl"/>
+                        <segue destination="UvE-DO-46i" kind="relationship" relationship="viewControllers" id="uTb-sn-oL1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQm-VY-ptE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="157"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="gmM-1D-Acf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UvE-DO-46i" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendarTab" id="9og-Qf-NWO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mzh-cy-kJa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YaI-rr-Hes" kind="relationship" relationship="rootViewController" id="iuy-eA-mPO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dC-iU-1Eu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809" y="884"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gsb-ZZ-CU0"/>
-    </inferredMetricsTieBreakers>
     <resources>
+        <image name="calendarTab" width="25" height="25"/>
+        <image name="journalTab" width="25" height="25"/>
         <image name="landscape" width="600" height="420"/>
         <image name="logo" width="150" height="150"/>
         <image name="play" width="62" height="59.5"/>

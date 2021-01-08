@@ -10,16 +10,16 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class MainViewController: TraxyBaseViewController, UITableViewDataSource, UITableViewDelegate, AddJournalDelegate {
+class MainViewController: TraxyTopLevelViewController, UITableViewDataSource, UITableViewDelegate, AddJournalDelegate {
     
-    fileprivate var db: Firestore!
-    fileprivate var ref: DocumentReference?
-    fileprivate var userId: String? = ""
-    fileprivate var listener: ListenerRegistration?
+//    fileprivate var db: Firestore!
+//    fileprivate var ref: DocumentReference?
+//    fileprivate var userId: String? = ""
+//    fileprivate var listener: ListenerRegistration?
     
     @IBOutlet weak var tableView: UITableView!
-    var userEmail : String?
-    var journals : [Journal]?
+//    var userEmail : String?
+//    var journals : [Journal]?
     
     var tableViewData: [(sectionHeader: String, journals: [Journal])]? {
         didSet {
@@ -32,53 +32,61 @@ class MainViewController: TraxyBaseViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.db = Firestore.firestore()
+//        self.db = Firestore.firestore()
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user {
-                self.userId = user.uid
-                if self.userId != nil {
-                    self.ref = self.db.collection("user").document(self.userId!)
-                    self.registerForFireBaseUpdates()
-                }
-            }
-        }
+//        Auth.auth().addStateDidChangeListener { auth, user in
+//            if let user = user {
+//                self.userId = user.uid
+//                if self.userId != nil {
+//                    self.ref = self.db.collection("user").document(self.userId!)
+//                    self.registerForFireBaseUpdates()
+//                }
+//            }
+//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if let l = self.listener {
-            l.remove()
-        }
+//        if let l = self.listener {
+//            l.remove()
+//        }
     }
     
-    fileprivate func registerForFireBaseUpdates()
-    {
-        self.listener = self.ref?.collection("journals").addSnapshotListener({ (snapshot, error) in
-            guard let documents = snapshot?.documents else {
-                print("Error fetching documents: \(error!)")
-                return
-            }
-
-            self.journals = [Journal]()
-            for j in documents {
-                let key = j.documentID
-                let name : String? = j["name"] as! String?
-                let location : String?  = j["address"] as! String?
-                let startDateStr  = j["startDate"] as! String?
-                let endDateStr = j["endDate"] as! String?
-                let lat = j["lat"] as! Double?
-                let lng = j["lng"] as! Double?
-                let placeId = j["placeId"] as! String?
-                let journal = Journal(key: key, name: name, location: location, startDate: startDateStr?.dateFromISO8601, endDate: endDateStr?.dateFromISO8601, lat: lat, lng: lng, placeId: placeId)
-                self.journals?.append(journal)
-            }
-            self.sortIntoSections(journals: self.journals!)
-        })
+//    fileprivate func registerForFireBaseUpdates()
+//    {
+//        self.listener = self.ref?.collection("journals").addSnapshotListener({ (snapshot, error) in
+//            guard let documents = snapshot?.documents else {
+//                print("Error fetching documents: \(error!)")
+//                return
+//            }
+//
+//            self.journals = [Journal]()
+//            for j in documents {
+//                let key = j.documentID
+//                let name : String? = j["name"] as! String?
+//                let location : String?  = j["address"] as! String?
+//                let startDateStr  = j["startDate"] as! String?
+//                let endDateStr = j["endDate"] as! String?
+//                let lat = j["lat"] as! Double?
+//                let lng = j["lng"] as! Double?
+//                let placeId = j["placeId"] as! String?
+//                let journal = Journal(key: key, name: name, location: location, startDate: startDateStr?.dateFromISO8601, endDate: endDateStr?.dateFromISO8601, lat: lat, lng: lng, placeId: placeId)
+//                self.journals?.append(journal)
+//            }
+//            self.sortIntoSections(journals: self.journals!)
+//        })
+//    }
+    
+    override func journalsDidLoad() {
+        if let j = self.journals {
+            self.sortIntoSections(journals: j)
+        } else {
+            self.tableViewData?.removeAll()
+        }
     }
     
     func sortIntoSections(journals: [Journal]) {

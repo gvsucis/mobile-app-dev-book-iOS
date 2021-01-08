@@ -42,6 +42,8 @@
 		9E9104E2251F8925009BDD4D /* TraxyLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104E1251F8925009BDD4D /* TraxyLoginTextField.swift */; };
 		9EC20E8025267DF300154EC5 /* AddJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC20E7F25267DF300154EC5 /* AddJournalViewController.swift */; };
 		9EC20E85252689B500154EC5 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC20E84252689B500154EC5 /* APIKeys.swift */; };
+		9EECF59725A8AA0E00098B43 /* TraxyTopLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EECF59625A8AA0E00098B43 /* TraxyTopLevelViewController.swift */; };
+		9EECF59C25A8B0D900098B43 /* TraxyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EECF59B25A8B0D900098B43 /* TraxyTabBarController.swift */; };
 		B67B7251164BC2CCDD02DF08 /* Pods_TraxyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EA4D044D8DA5DF936AF916 /* Pods_TraxyApp.framework */; };
 		F7EC29EB572D7A3629220840 /* Pods_TraxyApp_TraxyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3388D722B352630A02E2CCCC /* Pods_TraxyApp_TraxyAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -111,6 +113,8 @@
 		9E9104E1251F8925009BDD4D /* TraxyLoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginTextField.swift; sourceTree = "<group>"; };
 		9EC20E7F25267DF300154EC5 /* AddJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalViewController.swift; sourceTree = "<group>"; };
 		9EC20E84252689B500154EC5 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		9EECF59625A8AA0E00098B43 /* TraxyTopLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyTopLevelViewController.swift; sourceTree = "<group>"; };
+		9EECF59B25A8B0D900098B43 /* TraxyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyTabBarController.swift; sourceTree = "<group>"; };
 		A1922BE41E95E88709BD80E2 /* Pods-TraxyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraxyApp.release.xcconfig"; path = "Target Support Files/Pods-TraxyApp/Pods-TraxyApp.release.xcconfig"; sourceTree = "<group>"; };
 		A5EA4D044D8DA5DF936AF916 /* Pods_TraxyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraxyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E884EF814E2E924FFE6F26B8 /* Pods-TraxyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraxyAppTests.release.xcconfig"; path = "Target Support Files/Pods-TraxyAppTests/Pods-TraxyAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 				9E38DD1B259BA035001229D8 /* JournalTableViewController.swift */,
 				9E38DD4B259BDA76001229D8 /* JournalEntryConfirmationViewController.swift */,
 				9E38DDB6259E6D7C001229D8 /* AudioViewController.swift */,
+				9EECF59625A8AA0E00098B43 /* TraxyTopLevelViewController.swift */,
+				9EECF59B25A8B0D900098B43 /* TraxyTabBarController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -575,6 +581,7 @@
 				9E9104D8251F88BF009BDD4D /* TraxyLoginLabel.swift in Sources */,
 				0CEC9DDD24EC45E700B5944C /* AppDelegate.swift in Sources */,
 				0CEC9DDF24EC45E700B5944C /* SceneDelegate.swift in Sources */,
+				9EECF59725A8AA0E00098B43 /* TraxyTopLevelViewController.swift in Sources */,
 				9E708EC525A3C033004B381A /* WeatherService.swift in Sources */,
 				9EC20E8025267DF300154EC5 /* AddJournalViewController.swift in Sources */,
 				9E38DD44259BC0D4001229D8 /* JournalEntry.swift in Sources */,
@@ -583,6 +590,7 @@
 				9E38DD1C259BA035001229D8 /* JournalTableViewController.swift in Sources */,
 				9E38DD6F259D088C001229D8 /* JournalEntryTableViewCell.swift in Sources */,
 				9EC20E85252689B500154EC5 /* APIKeys.swift in Sources */,
+				9EECF59C25A8B0D900098B43 /* TraxyTabBarController.swift in Sources */,
 				9E9104DD251F88EC009BDD4D /* TraxyLoginButton.swift in Sources */,
 				9E708ECD25A3C0C2004B381A /* OpenWeatherService.swift in Sources */,
 				0CEC9E1B24EEC70300B5944C /* UIViewController+Validation.swift in Sources */,
