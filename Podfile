@@ -14,7 +14,7 @@ target 'TraxyApp' do
   pod 'Firebase/Core'
   pod 'Kingfisher'
   pod 'Lightbox'
-
+  pod 'FSCalendar'
   target 'TraxyAppTests' do
     inherit! :search_paths
     # Pods for testing

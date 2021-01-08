@@ -37,6 +37,7 @@ class TraxyTopLevelViewController: TraxyBaseViewController {
                         }
                     }
                 }
+                self.db = Firestore.firestore()
                 self.ref = self.db.collection("user").document(self.userId!)
                 if self.shouldLoad {
                     self.registerForFireBaseUpdates()
@@ -47,7 +48,6 @@ class TraxyTopLevelViewController: TraxyBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.db = Firestore.firestore()
     }
 
     override func didReceiveMemoryWarning() {

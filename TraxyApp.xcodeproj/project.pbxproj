@@ -44,6 +44,7 @@
 		9EC20E85252689B500154EC5 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC20E84252689B500154EC5 /* APIKeys.swift */; };
 		9EECF59725A8AA0E00098B43 /* TraxyTopLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EECF59625A8AA0E00098B43 /* TraxyTopLevelViewController.swift */; };
 		9EECF59C25A8B0D900098B43 /* TraxyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EECF59B25A8B0D900098B43 /* TraxyTabBarController.swift */; };
+		9EECF5C325A8B6E000098B43 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EECF5C225A8B6E000098B43 /* CalendarViewController.swift */; };
 		B67B7251164BC2CCDD02DF08 /* Pods_TraxyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EA4D044D8DA5DF936AF916 /* Pods_TraxyApp.framework */; };
 		F7EC29EB572D7A3629220840 /* Pods_TraxyApp_TraxyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3388D722B352630A02E2CCCC /* Pods_TraxyApp_TraxyAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -115,6 +116,7 @@
 		9EC20E84252689B500154EC5 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		9EECF59625A8AA0E00098B43 /* TraxyTopLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyTopLevelViewController.swift; sourceTree = "<group>"; };
 		9EECF59B25A8B0D900098B43 /* TraxyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyTabBarController.swift; sourceTree = "<group>"; };
+		9EECF5C225A8B6E000098B43 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		A1922BE41E95E88709BD80E2 /* Pods-TraxyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraxyApp.release.xcconfig"; path = "Target Support Files/Pods-TraxyApp/Pods-TraxyApp.release.xcconfig"; sourceTree = "<group>"; };
 		A5EA4D044D8DA5DF936AF916 /* Pods_TraxyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraxyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E884EF814E2E924FFE6F26B8 /* Pods-TraxyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraxyAppTests.release.xcconfig"; path = "Target Support Files/Pods-TraxyAppTests/Pods-TraxyAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				9E38DDB6259E6D7C001229D8 /* AudioViewController.swift */,
 				9EECF59625A8AA0E00098B43 /* TraxyTopLevelViewController.swift */,
 				9EECF59B25A8B0D900098B43 /* TraxyTabBarController.swift */,
+				9EECF5C225A8B6E000098B43 /* CalendarViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				0CEC9E1924EDE54E00B5944C /* SignUpViewController.swift in Sources */,
 				9E0E546D2526429C00A3E405 /* TraxyMainTableViewCell.swift in Sources */,
 				9E38DDB7259E6D7C001229D8 /* AudioViewController.swift in Sources */,
+				9EECF5C325A8B6E000098B43 /* CalendarViewController.swift in Sources */,
 				9E38DD7F259D2DD4001229D8 /* CardView.swift in Sources */,
 				9E9104D3251F84FC009BDD4D /* TraxyBaseViewController.swift in Sources */,
 			);
