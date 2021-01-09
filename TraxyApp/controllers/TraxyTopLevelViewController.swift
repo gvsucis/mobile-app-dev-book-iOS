@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import FirebaseFirestore
-import FirebaseAuth
 
 class TraxyTopLevelViewController: TraxyBaseViewController {
     var shouldLoad = true
@@ -19,9 +17,7 @@ class TraxyTopLevelViewController: TraxyBaseViewController {
         }
     }
     
-    fileprivate var db: Firestore!
-    var ref: DocumentReference?
-    fileprivate var listener: ListenerRegistration?
+    let repo = TraxyRepository.getInstance()
     
     var userId : String? = "" {
         didSet {
@@ -37,10 +33,10 @@ class TraxyTopLevelViewController: TraxyBaseViewController {
                         }
                     }
                 }
-                self.db = Firestore.firestore()
-                self.ref = self.db.collection("user").document(self.userId!)
                 if self.shouldLoad {
-                    self.registerForFireBaseUpdates()
+                    repo.listenForJournalUpdates { (journals) in
+                        self.journals = journals
+                    }
                 }
             }
         }
@@ -56,53 +52,18 @@ class TraxyTopLevelViewController: TraxyBaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let tbc = self.tabBarController as? TraxyTabBarController {
-            self.userId = tbc.userId
-        }
+        self.userId = repo.userId
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        // unregister from listeners here.
-        if let l = self.listener {
-            l.remove()
-        }
-    }
-
-    fileprivate func registerForFireBaseUpdates()
-    {
-        self.listener = self.ref?.collection("journals").addSnapshotListener({ (snapshot, error) in
-            guard let documents = snapshot?.documents else {
-                print("Error fetching documents: \(error!)")
-                return
-            }
-
-            var tmpItems = [Journal]()
-            for j in documents {
-                let key = j.documentID
-                let name : String? = j["name"] as! String?
-                let location : String?  = j["address"] as! String?
-                let startDateStr  = j["startDate"] as! String?
-                let endDateStr = j["endDate"] as! String?
-                let lat = j["lat"] as! Double?
-                let lng = j["lng"] as! Double?
-                let placeId = j["placeId"] as! String?
-                let journal = Journal(key: key, name: name, location: location, startDate: startDateStr?.dateFromISO8601, endDate: endDateStr?.dateFromISO8601, lat: lat, lng: lng, placeId: placeId)
-                tmpItems.append(journal)
-            }
-            self.journals = tmpItems
-        })
+        repo.stopListeningForUpdates()
     }
     
     @IBAction func logout() {
         // Note we need not explicitly do a segue as the auth listener on our
         // top level tab bar controller will detect and put up the login.
-        do {
-            try Auth.auth().signOut()
-            print("Logged out")
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
+        repo.logout()
         self.journals?.removeAll()
         self.journals = nil
         self.userEmail = nil

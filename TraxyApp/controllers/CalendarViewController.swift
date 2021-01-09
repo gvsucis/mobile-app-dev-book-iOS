@@ -12,8 +12,8 @@ import FSCalendar
 class CalendarViewController: TraxyTopLevelViewController {
     
     var journalView : MainViewController?
-
     @IBOutlet weak var calendar: FSCalendar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.calendar.backgroundColor = THEME_COLOR3
@@ -55,7 +55,7 @@ class CalendarViewController: TraxyTopLevelViewController {
             self.journalView = segue.destination as? MainViewController
             self.journalView?.shouldLoad = false
         } else  if segue.identifier == "addJournalSegue" {
-            if let destVC = segue.destination as? AddJournalViewController {
+            if let destVC = segue.destination as? JournalEditorViewController {
                 destVC.delegate = self.journalView
             }
         }

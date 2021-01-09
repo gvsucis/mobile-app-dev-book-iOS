@@ -30,11 +30,16 @@ class AddJournalViewController: FormViewController {
                 row.title = "Journal Title"
                 row.placeholder = "Descriptive title"
                 row.tag = "TitleTag"
+                row.value = self.journal?.name
                 row.add(rule: RuleRequired())
             }
             <<< LabelRow () { row in
                 row.title = "General Location"
-                row.value = "Tap to search"
+                if let loc = journal?.location {
+                    row.value = loc
+                } else {
+                    row.value = "Tap to search"
+                }
                 row.tag = "LocTag"
                 var rules = RuleSet<String>()
                 rules.add(rule: RuleClosure(closure: { (loc) -> ValidationError? in
@@ -54,13 +59,21 @@ class AddJournalViewController: FormViewController {
             +++ Section("Trip Dates")
                 <<< DateRow(){ row in
                     row.title = "Start Date"
-                    row.value = Date()
+                    if let date = journal?.startDate {
+                        row.value = date
+                    } else {
+                        row.value = Date()
+                    }
                     row.tag = "StartDateTag"
                     row.add(rule: RuleRequired())
                 }
                 <<< DateRow(){ row in
                     row.title = "End Date"
-                    row.value = Date(timeIntervalSinceNow: 86401)
+                    if let date = journal?.endDate {
+                        row.value = date
+                    } else {
+                        row.value = Date(timeIntervalSinceNow: 86401)
+                    }
                     row.tag = "EndDateTag"
                     row.validationOptions = .validatesOnChange
                     var rules = RuleSet<Date>()
@@ -106,46 +119,7 @@ class AddJournalViewController: FormViewController {
         }
         LabelRow.defaultCellUpdate = labelRowValidationUpdate
         LabelRow.defaultOnRowValidationChanged = labelRowValidationUpdate
-        
-        let cancelButton : UIBarButtonItem = UIBarButtonItem(title: "Cancel",
-            style: .plain, target: self,
-            action: #selector(AddJournalViewController.cancelPressed))
-        self.navigationItem.leftBarButtonItem = cancelButton
-        
-        let saveButton : UIBarButtonItem = UIBarButtonItem(title: "Save",
-            style: .plain, target: self,
-            action: #selector(AddJournalViewController.savePressed))
-        self.navigationItem.rightBarButtonItem = saveButton
     }
-    
-    @objc func cancelPressed()
-        {
-            _ = self.navigationController?.popViewController(animated: true)
-        }
-        
-    @objc func savePressed()
-    {
-        let errors = self.form.validate()
-        if errors.count > 0 {
-            print("fix ur errors!")
-        } else {
-        
-            // extract the values from the form
-            let titleRow: TextRow! = form.rowBy(tag: "TitleTag")
-            let locRow: LabelRow! = form.rowBy(tag: "LocTag")
-            let startDateRow : DateRow! = form.rowBy(tag: "StartDateTag")
-            let endDateRow : DateRow! = form.rowBy(tag: "EndDateTag")
-            
-            // return the newly created Journal instance via the delegate
-            self.journal?.name = titleRow.value! as String
-            self.journal?.location = locRow.value! as String
-            self.journal?.startDate = startDateRow.value! as Date
-            self.journal?.endDate = endDateRow.value! as Date
-            self.delegate?.save(journal: self.journal!)
-            _ = self.navigationController?.popViewController(animated: true)
-        }
-    }
-
 }
 
 extension AddJournalViewController: GMSAutocompleteViewControllerDelegate {

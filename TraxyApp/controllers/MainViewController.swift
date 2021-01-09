@@ -7,19 +7,10 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
 
-class MainViewController: TraxyTopLevelViewController, UITableViewDataSource, UITableViewDelegate, AddJournalDelegate {
-    
-//    fileprivate var db: Firestore!
-//    fileprivate var ref: DocumentReference?
-//    fileprivate var userId: String? = ""
-//    fileprivate var listener: ListenerRegistration?
+class MainViewController: TraxyTopLevelViewController, UITableViewDataSource, UITableViewDelegate, JournalEditorDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-//    var userEmail : String?
-//    var journals : [Journal]?
     
     var tableViewData: [(sectionHeader: String, journals: [Journal])]? {
         didSet {
@@ -31,55 +22,15 @@ class MainViewController: TraxyTopLevelViewController, UITableViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.db = Firestore.firestore()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        Auth.auth().addStateDidChangeListener { auth, user in
-//            if let user = user {
-//                self.userId = user.uid
-//                if self.userId != nil {
-//                    self.ref = self.db.collection("user").document(self.userId!)
-//                    self.registerForFireBaseUpdates()
-//                }
-//            }
-//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        if let l = self.listener {
-//            l.remove()
-//        }
     }
-    
-//    fileprivate func registerForFireBaseUpdates()
-//    {
-//        self.listener = self.ref?.collection("journals").addSnapshotListener({ (snapshot, error) in
-//            guard let documents = snapshot?.documents else {
-//                print("Error fetching documents: \(error!)")
-//                return
-//            }
-//
-//            self.journals = [Journal]()
-//            for j in documents {
-//                let key = j.documentID
-//                let name : String? = j["name"] as! String?
-//                let location : String?  = j["address"] as! String?
-//                let startDateStr  = j["startDate"] as! String?
-//                let endDateStr = j["endDate"] as! String?
-//                let lat = j["lat"] as! Double?
-//                let lng = j["lng"] as! Double?
-//                let placeId = j["placeId"] as! String?
-//                let journal = Journal(key: key, name: name, location: location, startDate: startDateStr?.dateFromISO8601, endDate: endDateStr?.dateFromISO8601, lat: lat, lng: lng, placeId: placeId)
-//                self.journals?.append(journal)
-//            }
-//            self.sortIntoSections(journals: self.journals!)
-//        })
-//    }
     
     override func journalsDidLoad() {
         if let j = self.journals {
@@ -145,8 +96,17 @@ class MainViewController: TraxyTopLevelViewController, UITableViewDataSource, UI
         
         cell.name?.text = journal.name
         cell.subName?.text = journal.location
-        cell.coverImage?.image = UIImage(named: "landscape")
-        
+        if let coverUrl = journal.coverPhotoUrl {
+            if coverUrl != "" {
+                let url = URL(string: coverUrl)
+                cell.coverImage?.kf.indicatorType = .activity
+                cell.coverImage?.kf.setImage(with: url)
+            } else {
+                cell.coverImage?.image = UIImage(named: "landscape")
+            }
+        } else {
+            cell.coverImage?.image = UIImage(named: "landscape")
+        }
         return cell
     }
     
@@ -188,7 +148,7 @@ class MainViewController: TraxyTopLevelViewController, UITableViewDataSource, UI
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addJournalSegue" {
-            if let destVC = segue.destination as? AddJournalViewController {
+            if let destVC = segue.destination as? JournalEditorViewController {
                 destVC.delegate = self
             }
         } else if segue.identifier == "showJournalSegue" {
@@ -197,28 +157,14 @@ class MainViewController: TraxyTopLevelViewController, UITableViewDataSource, UI
                 let values = self.tableViewData?[indexPath!.section]
                 destVC.journal  = values?.journals[indexPath!.row]
                 destVC.userId = self.userId
+                destVC.journalEditorDelegate = self
             }
         }
     }
 
-    // MARK: - AddJournalDelegate
+    // MARK: - JournalEditorDelegate
     func save(journal: Journal) {
-        if let r = self.ref {
-            r.collection("journals").addDocument(data: self.toDictionary(vals: journal))
-        }
+        repo.saveJournal(journal: journal)
     }
-
-    func toDictionary(vals: Journal) -> [String:Any] {
-        return [
-            "name": vals.name! as NSString,
-            "address": vals.location! as NSString,
-            "startDate" : NSString(string: (vals.startDate?.iso8601)!) ,
-            "endDate": NSString(string: (vals.endDate?.iso8601)!),
-            "lat" : NSNumber(value: vals.lat!),
-            "lng" : NSNumber(value: vals.lng!),
-            "placeId" : vals.placeId! as NSString
-        ]
-    }
-    
 }
 

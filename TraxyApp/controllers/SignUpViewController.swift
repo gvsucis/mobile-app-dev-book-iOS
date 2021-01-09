@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class SignUpViewController: TraxyBaseViewController {
     @IBOutlet weak var emailField: UITextField!
@@ -43,12 +42,18 @@ class SignUpViewController: TraxyBaseViewController {
             
     @IBAction func signupButtonPressed(_ sender: UIButton) {
         if self.validateFields() {
-            Auth.auth().createUser(withEmail: self.emailField.text!, password:
-                                    self.passwordField.text!) { (user, error) in
-                if let  _ = user {
+            
+            let repo = TraxyRepository.getInstance()
+            repo.signUp(email: self.emailField.text!, password: self.passwordField.text!) {(success, errorMesg) in
+                if success {
                     self.performSegue(withIdentifier: "segueToMainFromSignUp", sender: self)
                 } else {
-                    self.reportError(msg: (error?.localizedDescription)!)
+                    if let msg = errorMesg {
+                        self.reportError(msg: msg)
+                    }
+                    self.passwordField.text = ""
+                    self.verifyPasswordField.text = ""
+                    self.passwordField.becomeFirstResponder()
                 }
             }
         } else {

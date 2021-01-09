@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class TraxyTabBarController: UITabBarController {
 
@@ -18,9 +17,10 @@ class TraxyTabBarController: UITabBarController {
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barTintColor = THEME_COLOR2
         UITabBar.appearance().tintColor = THEME_COLOR3
-        Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user {
-                self.userId = user.uid
+        let repo = TraxyRepository.getInstance()
+        repo.listenForAuthenticationChanges{ userId in
+            if let uid = userId {
+                self.userId = uid
                 for child in self.children {
                     if let nc = child as? UINavigationController {
                         if let c = nc.children[0]
