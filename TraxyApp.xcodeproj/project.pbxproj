@@ -42,6 +42,7 @@
 		9E9104E2251F8925009BDD4D /* TraxyLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104E1251F8925009BDD4D /* TraxyLoginTextField.swift */; };
 		9EC20E8025267DF300154EC5 /* AddJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC20E7F25267DF300154EC5 /* AddJournalViewController.swift */; };
 		9EC20E85252689B500154EC5 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC20E84252689B500154EC5 /* APIKeys.swift */; };
+		9EECF63625AA668600098B43 /* TraxyRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EECF63525AA668600098B43 /* TraxyRespository.swift */; };
 		B67B7251164BC2CCDD02DF08 /* Pods_TraxyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EA4D044D8DA5DF936AF916 /* Pods_TraxyApp.framework */; };
 		F7EC29EB572D7A3629220840 /* Pods_TraxyApp_TraxyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3388D722B352630A02E2CCCC /* Pods_TraxyApp_TraxyAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,8 @@
 		9E9104E1251F8925009BDD4D /* TraxyLoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginTextField.swift; sourceTree = "<group>"; };
 		9EC20E7F25267DF300154EC5 /* AddJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalViewController.swift; sourceTree = "<group>"; };
 		9EC20E84252689B500154EC5 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		9EECF5FB25AA5CA300098B43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9EECF63525AA668600098B43 /* TraxyRespository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraxyRespository.swift; sourceTree = "<group>"; };
 		A1922BE41E95E88709BD80E2 /* Pods-TraxyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraxyApp.release.xcconfig"; path = "Target Support Files/Pods-TraxyApp/Pods-TraxyApp.release.xcconfig"; sourceTree = "<group>"; };
 		A5EA4D044D8DA5DF936AF916 /* Pods_TraxyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraxyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E884EF814E2E924FFE6F26B8 /* Pods-TraxyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraxyAppTests.release.xcconfig"; path = "Target Support Files/Pods-TraxyAppTests/Pods-TraxyAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +183,7 @@
 				9E0E544D2524EC5200A3E405 /* views */,
 				9E0E54492524E50F00A3E405 /* controllers */,
 				0CEC9E1224EC618A00B5944C /* Localizable.strings */,
+				9EECF5FB25AA5CA300098B43 /* GoogleService-Info.plist */,
 				0CEC9DDC24EC45E700B5944C /* AppDelegate.swift */,
 				9E38DD16259B9F4A001229D8 /* GoogleService-Info.plist */,
 				9EC20E84252689B500154EC5 /* APIKeys.swift */,
@@ -271,6 +275,7 @@
 				9E0E54542524ECA400A3E405 /* Journal.swift */,
 				9E0E54592524ECD400A3E405 /* JournalModel.swift */,
 				9E38DD43259BC0D4001229D8 /* JournalEntry.swift */,
+				9EECF63525AA668600098B43 /* TraxyRespository.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -590,6 +595,7 @@
 				0CEC9E1724EDE0B700B5944C /* MainViewController.swift in Sources */,
 				9E0E545A2524ECD400A3E405 /* JournalModel.swift in Sources */,
 				0CEC9E1924EDE54E00B5944C /* SignUpViewController.swift in Sources */,
+				9EECF63625AA668600098B43 /* TraxyRespository.swift in Sources */,
 				9E0E546D2526429C00A3E405 /* TraxyMainTableViewCell.swift in Sources */,
 				9E38DDB7259E6D7C001229D8 /* AudioViewController.swift in Sources */,
 				9E38DD7F259D2DD4001229D8 /* CardView.swift in Sources */,

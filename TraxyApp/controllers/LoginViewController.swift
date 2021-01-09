@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class LoginViewController: TraxyBaseViewController {
 
@@ -51,12 +50,14 @@ class LoginViewController: TraxyBaseViewController {
     @IBAction func signupButtonPressed(_ sender: UIButton) {
         if self.validateFields() {
             print("Congratulations!  You entered correct values.")
-            Auth.auth().signIn(withEmail: self.emailField.text!, password:
-            self.passwordField.text!) { (user, error) in
-                if let _ = user {
+            let repo = TraxyRepository.getInstance()
+            repo.signIn(email: self.emailField.text!, password: self.passwordField.text!) {(success, errorMesg) in
+                if success {
                     self.performSegue(withIdentifier: "segueToMain", sender: self)
                 } else {
-                    self.reportError(msg: (error?.localizedDescription)!)
+                    if let msg = errorMesg {
+                        self.reportError(msg: msg)
+                    }
                     self.passwordField.text = ""
                     self.passwordField.becomeFirstResponder()
                 }
@@ -67,13 +68,8 @@ class LoginViewController: TraxyBaseViewController {
     }
     
     @IBAction func logout(segue : UIStoryboardSegue) {
-        do {
-            try Auth.auth().signOut()
-            print("Logged out")
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        
+        let repo = TraxyRepository.getInstance()
+        repo.logout()
         self.passwordField.text = ""
     }
     
@@ -84,7 +80,6 @@ class LoginViewController: TraxyBaseViewController {
             }
         }
     }
-    
 }
 
 extension LoginViewController : UITextFieldDelegate {
