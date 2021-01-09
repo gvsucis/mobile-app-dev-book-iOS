@@ -123,28 +123,28 @@ class AddJournalViewController: FormViewController {
             _ = self.navigationController?.popViewController(animated: true)
         }
         
-        @objc func savePressed()
-        {
-            let errors = self.form.validate()
-            if errors.count > 0 {
-                print("fix ur errors!")
-            } else {
+    @objc func savePressed()
+    {
+        let errors = self.form.validate()
+        if errors.count > 0 {
+            print("fix ur errors!")
+        } else {
+        
+            // extract the values from the form
+            let titleRow: TextRow! = form.rowBy(tag: "TitleTag")
+            let locRow: LabelRow! = form.rowBy(tag: "LocTag")
+            let startDateRow : DateRow! = form.rowBy(tag: "StartDateTag")
+            let endDateRow : DateRow! = form.rowBy(tag: "EndDateTag")
             
-                // extract the values from the form
-                let titleRow: TextRow! = form.rowBy(tag: "TitleTag")
-                let locRow: LabelRow! = form.rowBy(tag: "LocTag")
-                let startDateRow : DateRow! = form.rowBy(tag: "StartDateTag")
-                let endDateRow : DateRow! = form.rowBy(tag: "EndDateTag")
-                
-                // return the newly created Journal instance via the delegate
-                self.journal?.name = titleRow.value! as String
-                self.journal?.location = locRow.value! as String
-                self.journal?.startDate = startDateRow.value! as Date
-                self.journal?.endDate = endDateRow.value! as Date
-                self.delegate?.save(journal: self.journal!)
-                _ = self.navigationController?.popViewController(animated: true)
-            }
+            // return the newly created Journal instance via the delegate
+            self.journal?.name = titleRow.value! as String
+            self.journal?.location = locRow.value! as String
+            self.journal?.startDate = startDateRow.value! as Date
+            self.journal?.endDate = endDateRow.value! as Date
+            self.delegate?.save(journal: self.journal!)
+            _ = self.navigationController?.popViewController(animated: true)
         }
+    }
 
 }
 
