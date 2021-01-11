@@ -43,6 +43,34 @@ class CoverPhotoCollectionViewController: UIViewController {
     }
 }
 
+extension CoverPhotoCollectionViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        
+        let paddingSpace = self.insets.left * (ROW_SIZE + 1.0)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / ROW_SIZE
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int) -> UIEdgeInsets
+    {
+        return self.insets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    {
+        return self.insets.left
+    }
+}
+
 
 extension CoverPhotoCollectionViewController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -62,7 +90,7 @@ extension CoverPhotoCollectionViewController : UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId,
-                                                      for: indexPath) as! CoverPhotoCollectionViewCell
+            for: indexPath) as! CoverPhotoCollectionViewCell
         cell.photo.image = UIImage(named: "landscape")
         if let entry = self.entries?[indexPath.row] {
             if let url = entry["url"] as? String {
@@ -81,7 +109,7 @@ extension CoverPhotoCollectionViewController : UICollectionViewDataSource {
 
 extension CoverPhotoCollectionViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath)
+        didSelectItemAt indexPath: IndexPath)
     {
         if let entry = self.entries?[indexPath.row] {
             self.journal?.coverPhotoUrl = entry["url"] as? String
