@@ -8,6 +8,7 @@
 
 import UIKit
 import GooglePlaces
+import GoogleMaps
 import Firebase
 
 let THEME_COLOR1 = UIColor.init(red:0.000, green:0.157, blue:0.216,
@@ -35,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         searchAppearance.defaultTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         
         GMSPlacesClient.provideAPIKey(GOOGLE_PLACES_API_KEY)
+        GMSServices.provideAPIKey(GOOGLE_PLACES_API_KEY)
         FirebaseApp.configure()
         
         return true

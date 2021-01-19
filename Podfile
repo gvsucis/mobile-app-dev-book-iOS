@@ -8,6 +8,7 @@ target 'TraxyApp' do
   # Pods for TraxyApp
   pod 'Eureka'
   pod 'GooglePlaces'
+  pod 'GoogleMaps'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'

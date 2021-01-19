@@ -184,11 +184,11 @@
             <objects>
                 <viewController id="cQg-bl-yGh" customClass="MainViewController" customModule="TraxyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pzV-7R-1YM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="426"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rBX-7d-Gfs">
-                                <rect key="frame" x="0.0" y="44" width="414" height="382"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="kuO-Yw-ud8" detailTextLabel="hVk-1A-JyZ" style="IBUITableViewCellStyleSubtitle" id="PG2-HT-3ex">
@@ -322,7 +322,7 @@
                                 </connections>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2x-br-nhZ">
-                                <rect key="frame" x="0.0" y="387" width="414" height="426"/>
+                                <rect key="frame" x="0.0" y="386.5" width="414" height="426.5"/>
                                 <connections>
                                     <segue destination="cQg-bl-yGh" kind="embed" identifier="embeddedJournalViewSegue" id="Yyi-Sp-i6e"/>
                                 </connections>
@@ -361,12 +361,38 @@
             </objects>
             <point key="canvasLocation" x="1569.5652173913045" y="883.92857142857144"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="vVN-1O-5hq">
+            <objects>
+                <viewController id="qFw-iQ-Hbe" customClass="MapViewController" customModule="TraxyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IkZ-a3-7Sj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Fjj-cM-3ah"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ahw-Rf-gpx">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="MVl-72-qI8">
+                            <connections>
+                                <segue destination="2ps-DX-lqd" kind="unwind" unwindAction="unwindFromSignupWithSegue:" id="vBh-a3-7cY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="syL-bH-x1E" kind="show" identifier="showJournalSegue" id="leY-0w-Lwb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ocJ-QZ-kxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="2ps-DX-lqd" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1570" y="1584"/>
+        </scene>
         <!--Journal Table View Controller-->
         <scene sceneID="d67-f0-Neu">
             <objects>
                 <tableViewController id="syL-bH-x1E" customClass="JournalTableViewController" customModule="TraxyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lRT-z9-FkY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="426"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -805,7 +831,7 @@
             <objects>
                 <viewController id="K6m-lG-COB" customClass="JournalEntryConfirmationViewController" customModule="TraxyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ojQ-di-E5M">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="426"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="hDM-5z-gfw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -836,11 +862,11 @@
                         <viewControllerLayoutGuide type="bottom" id="TNS-yT-dC0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0c3-z5-Rbm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="426"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjh-f3-Cmg">
-                                <rect key="frame" x="20" y="52" width="41.5" height="41.5"/>
+                                <rect key="frame" x="20" y="96" width="87.5" height="87.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cjh-f3-Cmg" secondAttribute="height" multiplier="1:1" id="X3i-qM-Uqi"/>
                                 </constraints>
@@ -850,7 +876,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zm-mg-1n2">
-                                <rect key="frame" x="69.5" y="52" width="275" height="65"/>
+                                <rect key="frame" x="115.5" y="96" width="183" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="L3Q-zc-xqI"/>
                                 </constraints>
@@ -859,14 +885,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2f-4d-1sA">
-                                <rect key="frame" x="352.5" y="52" width="41.5" height="41.5"/>
+                                <rect key="frame" x="306.5" y="96" width="87.5" height="87.5"/>
                                 <state key="normal" title="Button" image="play"/>
                                 <connections>
                                     <action selector="playButtonPressed:" destination="3Kt-Tk-8vt" eventType="touchUpInside" id="9b5-WR-gVj"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Wx-82-tB6">
-                                <rect key="frame" x="0.0" y="101.5" width="414" height="324.5"/>
+                                <rect key="frame" x="0.0" y="191.5" width="414" height="621.5"/>
                                 <connections>
                                     <segue destination="asb-RB-19c" kind="embed" identifier="setupAudioCaptionForm" id="wIP-uP-Mxx"/>
                                 </connections>
@@ -923,7 +949,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Jh9-uw-eft"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dl1-hM-kSf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="324.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="621.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="mXY-iy-8PK"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -947,6 +973,7 @@
                         <segue destination="vZh-z0-aKW" kind="relationship" relationship="viewControllers" id="qdn-RO-v49"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="presentLogin" modalPresentationStyle="fullScreen" id="rsq-X6-dVl"/>
                         <segue destination="UvE-DO-46i" kind="relationship" relationship="viewControllers" id="uTb-sn-oL1"/>
+                        <segue destination="QHG-A1-HwU" kind="relationship" relationship="viewControllers" id="BIL-4K-Pd9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQm-VY-ptE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -979,6 +1006,7 @@
                     <view key="view" contentMode="scaleToFill" id="wNy-s8-QkW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3my-j1-qf0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
@@ -1039,6 +1067,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Yd-VP-RVx"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8yw-4x-GuW" firstAttribute="leading" secondItem="pEN-yv-hXn" secondAttribute="leading" constant="20" symbolic="YES" id="0ma-xx-bSk"/>
@@ -1057,16 +1086,37 @@
             </objects>
             <point key="canvasLocation" x="3793" y="284"/>
         </scene>
+        <!--Map-->
+        <scene sceneID="hvx-yc-Gjo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QHG-A1-HwU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="mapTab" id="eRw-B2-ioc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hhi-45-2SR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qFw-iQ-Hbe" kind="relationship" relationship="rootViewController" id="GC8-nj-u8o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WfT-TR-heE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809" y="1584"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="efg-T1-QmV"/>
-        <segue reference="Yyi-Sp-i6e"/>
+        <segue reference="W6q-5V-19V"/>
+        <segue reference="leY-0w-Lwb"/>
+        <segue reference="3nK-dR-6A7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendarTab" width="25" height="25"/>
         <image name="journalTab" width="25" height="25"/>
         <image name="landscape" width="600" height="420"/>
         <image name="logo" width="150" height="150"/>
+        <image name="mapTab" width="25" height="25"/>
         <image name="play" width="62" height="59.5"/>
         <image name="playVideo" width="301" height="300.5"/>
         <image name="record" width="96" height="91.5"/>

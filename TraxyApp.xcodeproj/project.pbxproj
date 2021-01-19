@@ -40,6 +40,8 @@
 		9E9104D8251F88BF009BDD4D /* TraxyLoginLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104D7251F88BF009BDD4D /* TraxyLoginLabel.swift */; };
 		9E9104DD251F88EC009BDD4D /* TraxyLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104DC251F88EC009BDD4D /* TraxyLoginButton.swift */; };
 		9E9104E2251F8925009BDD4D /* TraxyLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9104E1251F8925009BDD4D /* TraxyLoginTextField.swift */; };
+		9E9C9D7025B338CB00A34935 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C9D6F25B338CB00A34935 /* MapViewController.swift */; };
+		9E9C9D7525B343D000A34935 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9C9D7425B343D000A34935 /* CoreLocation.framework */; };
 		9EC20E8025267DF300154EC5 /* AddJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC20E7F25267DF300154EC5 /* AddJournalViewController.swift */; };
 		9EC20E85252689B500154EC5 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC20E84252689B500154EC5 /* APIKeys.swift */; };
 		9EECF59725A8AA0E00098B43 /* TraxyTopLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EECF59625A8AA0E00098B43 /* TraxyTopLevelViewController.swift */; };
@@ -116,6 +118,8 @@
 		9E9104D7251F88BF009BDD4D /* TraxyLoginLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginLabel.swift; sourceTree = "<group>"; };
 		9E9104DC251F88EC009BDD4D /* TraxyLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginButton.swift; sourceTree = "<group>"; };
 		9E9104E1251F8925009BDD4D /* TraxyLoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyLoginTextField.swift; sourceTree = "<group>"; };
+		9E9C9D6F25B338CB00A34935 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9E9C9D7425B343D000A34935 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9EC20E7F25267DF300154EC5 /* AddJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalViewController.swift; sourceTree = "<group>"; };
 		9EC20E84252689B500154EC5 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		9EECF59625A8AA0E00098B43 /* TraxyTopLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxyTopLevelViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E38DD22259BB0F8001229D8 /* AVFoundation.framework in Frameworks */,
+				9E9C9D7525B343D000A34935 /* CoreLocation.framework in Frameworks */,
 				9E38DD25259BB103001229D8 /* MobileCoreServices.framework in Frameworks */,
 				B67B7251164BC2CCDD02DF08 /* Pods_TraxyApp.framework in Frameworks */,
 				9E38DD23259BB0F8001229D8 /* AVKit.framework in Frameworks */,
@@ -224,6 +229,7 @@
 		450FC966C1A1A96170D1E8FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E9C9D7425B343D000A34935 /* CoreLocation.framework */,
 				9E38DD24259BB103001229D8 /* MobileCoreServices.framework */,
 				9E38DD20259BB0F8001229D8 /* AVFoundation.framework */,
 				9E38DD21259BB0F8001229D8 /* AVKit.framework */,
@@ -264,6 +270,7 @@
 				9EECF5C225A8B6E000098B43 /* CalendarViewController.swift */,
 				9EECF5C725A8FADF00098B43 /* JournalEditorViewController.swift */,
 				9EECF5CC25A8FAF900098B43 /* CoverPhotoCollectionViewController.swift */,
+				9E9C9D6F25B338CB00A34935 /* MapViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -606,6 +613,7 @@
 				9E38DD1C259BA035001229D8 /* JournalTableViewController.swift in Sources */,
 				9E38DD6F259D088C001229D8 /* JournalEntryTableViewCell.swift in Sources */,
 				9EC20E85252689B500154EC5 /* APIKeys.swift in Sources */,
+				9E9C9D7025B338CB00A34935 /* MapViewController.swift in Sources */,
 				9EECF59C25A8B0D900098B43 /* TraxyTabBarController.swift in Sources */,
 				9EECF5C825A8FADF00098B43 /* JournalEditorViewController.swift in Sources */,
 				9EECF5D225A8FB2000098B43 /* CoverPhotoCollectionViewCell.swift in Sources */,
