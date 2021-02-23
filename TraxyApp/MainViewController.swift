@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: TraxyBaseViewController {
+class MainViewController: UIViewController {
 
     @IBOutlet weak var loginLabel: UILabel!
     var userEmail : String?
